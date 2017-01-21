@@ -1610,7 +1610,7 @@ end
 
 if matches[1] == "help" and is_mod(msg) then
 text = [[
-*MrTelgram V[1.0] Bot Commands:*
+*Bot-net V[1.2] Commands:*
 
 *!setowner* `[username|id|reply]` 
 _Set Group Owner(Multi Owner)_
@@ -1759,4 +1759,4 @@ patterns ={
 },
 run=run
 }
---end groupmanager.lua #beyond team#
+--end groupmanager.lua #Sajad Aliraqe#
