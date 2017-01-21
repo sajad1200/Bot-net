@@ -2,7 +2,6 @@ tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
 feedparser = (loadfile "./libs/feedparser.lua")()
 our_id = 308957378 -- Put Here Your Bot ID
---ایدی رباتتونو اینجا بزارید
 json = (loadfile "./libs/JSON.lua")()
 mimetype = (loadfile "./libs/mimetype.lua")()
 redis = (loadfile "./libs/redis.lua")()
@@ -83,19 +82,6 @@ function create_config( )
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-    info_text = [[》SpeedBot v1
-
-》https://github.com/BeyondTeam/BDReborn 
-
-》Admins :
-》@MakanDo | For Buy Bot
-
-》Our channel :
-》@Mr_Telgram《
-
-》Our website :
-》http://speedbot.ir
-]],
   }
   serialize_to_file(config, './data/config.lua')
   print ('saved config into conf.lua')
