@@ -1669,7 +1669,8 @@ _👁‍🗨 - Commands for Security Lock & mute :_
 
 
 _You Can Use_ *[!/#]* _To Run The Commands_
-_Sand Help to see old Commands_  *[!/#]* _To Run The all Commands_
+
+_Sand /help to see old Commands_  *[!/#]* _To Run The all Commands_
 
 *• Developed By Sajad Aliraqe - @Al_Srai*
 
@@ -1781,8 +1782,7 @@ _Show Group Link_
 _You Can Use_ *[!/#]* _To Run The Commands_
 _This Help List Only For_ *Moderators/Owners!*
 _Its Means, Only Group_ *Moderators/Owners* _Can Use It!_
-
-*Good luck ;)*]]
+]]
 return text
 end
 end
