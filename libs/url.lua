@@ -1,5 +1,5 @@
 --[[
-Copyright 2004-2007 Diego Nehab. 
+Copyright 2004-2007 Sajad Aliraqe. 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
 files (the "Software"), to deal in the Software without
