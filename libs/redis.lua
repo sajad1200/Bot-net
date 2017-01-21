@@ -17,7 +17,7 @@ Redis.commands.hgetall = Redis.command('hgetall', {
 
 local redis = nil
 
--- Won't launch an error if fails
+-- Won't launch an error if fails By Sajad Aliraqe
 local ok = pcall(function()
   redis = Redis.connect(params)
 end)
