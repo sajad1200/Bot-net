@@ -64,7 +64,7 @@ More information [Bot-net Development](https://t.me/joinchat/AAAAAD6v2N-Xoupx5d
 
 - [Sajad Aliraqe On Telegram](https://telegram.me/Al_Srai)
 
-- [Sahmi - Safel](https://telegram.me/safl888)
+- [Sahmi](https://telegram.me/safl888)
 ----------------
 
 ### Our Telegram channel:
