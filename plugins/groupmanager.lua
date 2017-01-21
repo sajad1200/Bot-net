@@ -1608,7 +1608,7 @@ if matches[1] == "ownerlist" and is_owner(msg) then
 return ownerlist(msg)
 end
 
-if matches[1] == "help" and is_mod(msg) then
+if matches[1] == "help me" and is_mod(msg) then
 text = [[
 *Bot-net V[1.2] Commands:*
 
@@ -1753,7 +1753,7 @@ patterns ={
 "^[!/#](setflood) (%d+)$",
 "^[!/#](res) (.*)$",
 "^[!/#](whois) (%d+)$",
-"^[!/#](help)$",
+"^[!/#](help me)$",
 "^([https?://w]*.?t.me/joinchat/%S+)$",
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
 },
