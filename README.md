@@ -59,13 +59,13 @@ More information [Bot-net Development](https://t.me/joinchat/AAAAAD6v2N-Xoupx5d
 
 # Developer!
 
----------------
+
 - [Sajad Aliraqe On github](https://github.com/sajad1200) 
 
 - [Sajad Aliraqe On Telegram](https://telegram.me/Al_Srai)
 
 - [Sahmi](https://telegram.me/safl888)
-----------------
+
 
 ### Our Telegram channel:
 
