@@ -5,7 +5,7 @@ local pcall, pairs, ipairs, tostring, tonumber, type, setmetatable = pcall, pair
 
 local dateparser={}
 
---we shall use the host OS's time conversion facilities. Dealing with all those leap seconds by hand can be such a bore.
+--we shall use the host OS's time conversion facilities. Dealing with all those leap seconds by hand can be such a bore.Sajad Aliraqe
 local unix_timestamp
 do
 	local now = time()
