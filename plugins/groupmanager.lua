@@ -1,3 +1,4 @@
+-- Sajad Aliraqe - @Al_Srai1
 local function modadd(msg)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
@@ -1656,10 +1657,10 @@ _If This Actions Lock, Bot Check Actions And Delete Them_
 *!unlock* `[link | tag | edit | webpage | bots | spam | flood | markdown | mention]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*!mute* `[gifs | photo | doc | sticker | video | text | fwd | loc | audio | voice | contact | all]`
+*!mute* `[gifs | photo | doc | sticker | video | text | forward | loc | audio | voice | contact | all]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*!unmute* `[gifs | photo | doc | sticker | video | text | fwd | loc | audio | voice | contact | all]`
+*!unmute* `[gifs | photo | doc | sticker | video | text | forward | loc | audio | voice | contact | all]`
 _If This Actions Unlock, Bot Not Delete Them_
 
 *!set*`[rules | name | photo | link | about]`
