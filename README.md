@@ -59,10 +59,15 @@ More information [Bot-net Development](https://t.me/joinchat/AAAAAD6v2N-Xoupx5d
 
 # Developer!
 
-[Sajad Aliraqe](https://github.com/Al_Srai)
+[Sajad Aliraqe](https://github.com/sajad1200) [Telegram](https://telegram.me/Al_Srai)
 
+[Sahmi - Safel](https://telegram.me/safl888)
 ----------------
 
 ### Our Telegram channel:
 
 [Bot-Net Channel](https://telegram.me/Al_Srai1)
+
+------
+
+- Bot-net
