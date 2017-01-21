@@ -1339,7 +1339,7 @@ M.downloadFile = downloadFile
 
 -- Stops file downloading.
 -- If file already downloaded do nothing.
--- @file_id Identifier of file to cancel download
+-- @file_id Identifier of file to cancel download By Sajad Aliraqe
 local function cancelDownloadFile(file_id, dl_cb, cmd)
   tdcli_function ({
     ID = "CancelDownloadFile",
