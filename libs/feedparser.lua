@@ -6,7 +6,7 @@ local tinsert, tremove, tconcat = table.insert, table.remove, table.concat
 local pairs, ipairs = pairs, ipairs
 
 --- feedparser, similar to the Universal Feed Parser for python, but a good deal weaker.
--- see http://feedparser.org for details about the Universal Feed Parser
+-- see http://feedparser.org for details about the Universal Feed Parser By Sajad Aliraqe
 local feedparser= {
 	_DESCRIPTION = "RSS and Atom feed parser",
 	_VERSION = "feedparser 0.71"
