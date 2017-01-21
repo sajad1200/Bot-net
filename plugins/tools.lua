@@ -372,7 +372,7 @@ end
 if matches[1] == 'sudolist' and is_sudo(msg) then
 return sudolist(msg)
     end
-if matches[1] == 'Botnet' then
+if matches[1] == 'botnet' then
 return tdcli.sendMessage(msg.chat_id_, msg.id_, 1, _config.info_text, 1, 'html')
     end
 if matches[1] == 'adminlist' and is_admin(msg) then
@@ -386,17 +386,17 @@ local hash = 'auto_leave_bot'
 --Enable Auto Leave
      if matches[2] == 'enable' then
     redis:del(hash)
-   return 'Auto leave has been enabled'
+   return '_Auto leave has been_ *enabled*'
 --Disable Auto Leave
      elseif matches[2] == 'disable' then
     redis:set(hash, true)
-   return 'Auto leave has been disabled'
+   return '_Auto leave has been_ *disabled*'
 --Auto Leave Status
       elseif matches[2] == 'status' then
       if not redis:get(hash) then
-   return 'Auto leave is enable'
+   return '_Auto leave is_ *enable*'
        else
-   return 'Auto leave is disable'
+   return '_Auto leave is_ *disable*'
          end
       end
    end
@@ -415,7 +415,7 @@ patterns = {
 "^[!/#](admindem) (.*)$",
 "^[!/#](leave)$",
 "^[!/#](autoleave) (.*)$", 
-"^[!/#](Botnet)$",
+"^[!/#](botnet)$",
 "^[!/#](creategroup) (.*)$",
 "^[!/#](createsuper) (.*)$",
 "^[!/#](tosuper)$",
