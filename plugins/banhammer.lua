@@ -1,3 +1,4 @@
+-- Sajad Aliraqe - @Al_Srai1
 local function pre_process(msg)
 chat = msg.chat_id_
 user = msg.sender_user_id_
