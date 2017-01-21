@@ -1607,8 +1607,78 @@ end
 if matches[1] == "ownerlist" and is_owner(msg) then
 return ownerlist(msg)
 end
-
 if matches[1] == "help me" and is_mod(msg) then
+text = [[
+
+*📃 - Bot - Net Commands :*
+
+
+_👁‍🗨 - Thes Commands for admins :_
+
+
+*💭 - /setowner* `[رفع أداري عبر رد او يوزر]` 
+
+*💭 - /remowner* `[حذف أداري عبر رد او يوزر]` 
+
+*💭 - /promote*  `[رفع أدمن عبر رد او يوزر]` 
+
+*💭 - /demote*   `[حذف أدمن عبر رد او يوزر]` 
+
+➕
+
+_👁‍🗨 - Commands for control member :_ 
+
+
+*💭 - /kick* `[طرد عبر رد ]`
+
+*💭 - /ban | unban* `[حضر , فك حضر عبر رد]`
+
+*💭 - /silent | unsilent* `[صامت , فك صامت عبر رد]`
+
+*💭 - /pin | unpin* `[تثبيت رسائل , ألغائها عبر رد]`
+
+*💭 - /id* `[عبر رد]`
+
+*💭 - /gpinfo* `[أستعراض معلومات المجموعه]`
+
+➕
+
+_👁‍🗨 - Commands for all lists :_
+
+
+*💭 - /silentlist* `[قائمه المكتومين]`
+
+*💭 - /banlist* `[قائمه المحضورين]`
+
+*💭 - /ownerlist* `[قائمه الاداريين]`
+
+*💭 - /modlist* `[قائمه الادمنية]`
+
+➕
+
+_👁‍🗨 - Commands for Security Lock & mute :_
+
+
+*💭 - /lock | unlock* `[link | edit | bots | spam | flood ]`
+
+*💭 - /mute | unmute* `[gifs | photo | sticker | video ]`
+
+*💭 - /mute | unmute* `[forward  | audio | voice | text]`
+
+*💭 - /clean* `[bans | mods | bots | silentlist]`   
+
+
+_You Can Use_ *[!/#]* _To Run The Commands_
+_Sand Help to see old Commands_  *[!/#]* _To Run The all Commands_
+
+*• Developed By Sajad Aliraqe - @Al_Srai*
+
+*• Channel : @Al_Srai1*
+
+]]
+return text
+end
+if matches[1] == "help" and is_mod(msg) then
 text = [[
 *Bot-net V[1.2] Commands:*
 
@@ -1754,6 +1824,7 @@ patterns ={
 "^[!/#](res) (.*)$",
 "^[!/#](whois) (%d+)$",
 "^[!/#](help me)$",
+"^[!/#](help)$",
 "^([https?://w]*.?t.me/joinchat/%S+)$",
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
 },
