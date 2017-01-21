@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/BDReborn
+cd $HOME/Bot-net
 
 install() {
 	    cd tg
@@ -32,7 +32,7 @@ if [ ! -f ./tg/tgcli ]; then
  fi
 
    echo -e "\033[38;5;208m"
-   echo -e "     > BeyondTeam Source :D                        "
+   echo -e "     > Bot-net Source By Sajad Aliraqe - @Al_Srai :)                       "
    echo -e "                                              \033[0;00m"
    echo -e "\e[36m"
    ./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
