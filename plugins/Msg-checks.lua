@@ -1,5 +1,5 @@
 
---Begin msg_checks.lua By Sajad Aliraqe
+-- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
 local TIME_CHECK = 2
 local function pre_process(msg)
 local data = load_data(_config.moderation.data)
@@ -372,4 +372,4 @@ return {
 	patterns = {},
 	pre_process = pre_process
 }
---End msg_checks.lua
+-- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
