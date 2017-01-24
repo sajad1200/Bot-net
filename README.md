@@ -1,6 +1,7 @@
-  *[Bot-net](https://telegram.me/Al_Srai1) Source By Sajad Aliraqe*
+  - [Bot-net](https://telegram.me/Al_Srai1) Source By Sajad Aliraqe
+============
 
-- An advanced and powerful administration bot based on NEW TG-CLI
+  - An advanced and powerful administration bot based on NEW TG-CLI
 
 
 -----------------
