@@ -10,11 +10,11 @@
 
 | Use helpold to see old help or Use help to see new help |
 |:--------|:------------|
-| [#!/]helpold | just send help me in your group and get the commands |
+| [#!/]helpold Or help  |
 
 | Use (setlang ar) To use bot in Arabic or To use bot in English send (setlang en) |
 |:--------|:------------|
-| [#!/]setlang ar or en | 
+| [#!/]setlang ar Or en | 
 
 -You can use "#", "!", or "/" to begin all commands
 
