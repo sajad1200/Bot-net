@@ -7,11 +7,16 @@
 
 ## Commands
 
-| Use help me |
+| Use helpold to see old help or Use help to see new help |
 |:--------|:------------|
-| [#!/]help me | just send help me in your group and get the commands |
+| [#!/]helpold | just send help me in your group and get the commands |
 
-**You can use "#", "!", or "/" to begin all commands
+| Use (setlang ar) To use bot in Arabic or To use bot in English send (setlang en) |
+|:--------|:------------|
+| [#!/]setlang ar or en | 
+
+-You can use "#", "!", or "/" to begin all commands
+
 
 * * *
 
@@ -71,6 +76,3 @@ More information [Bot-net Development](https://t.me/joinchat/AAAAAD6v2N-Xoupx5d
 
 [Bot-Net Channel](https://telegram.me/Al_Srai1)
 
-------
-
-- Bot-net
