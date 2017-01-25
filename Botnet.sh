@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 
 cd $HOME/Bot-net
@@ -29,12 +30,18 @@ if [ ! -f ./tg/tgcli ]; then
     echo "tg not found"
     echo "Run $0 install"
     exit 1
- fi
+fi
 
+if [ "$1" = "-p" ]; then
+    echo -e "\033[38;5;208m"
+    echo -e "     >> Bot-net Source By Sajad Aliraqe - @Al_Srai                    "
+    echo -e "                                              \033[0;00m"
+    echo -e "\e[36m"
+    ./tg/tgcli -s ./bot/bot.lua -p $2
+fi
    echo -e "\033[38;5;208m"
-   echo -e "     > Bot-net Source By Sajad Aliraqe - @Al_Srai :)                       "
+   echo -e "     >> Bot-net Source By Sajad Aliraqe - @Al_Srai                      "
    echo -e "                                              \033[0;00m"
    echo -e "\e[36m"
    ./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
 fi
-		
