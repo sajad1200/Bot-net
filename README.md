@@ -55,9 +55,9 @@ cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && 
 
 ### Sudo And Bot
 
-#After you run the bot for first time, send it `/id`. Get your ID and stop the bot.
+After you run the bot for first time, send it `/id`. Get your ID and stop the bot.
 
-#Open ./Bot-net./data./Config.lua And add your id in there
+Open ./Bot-net./data./Config.lua And add your id in there
 ```
     sudo_users = {
     321681775,
