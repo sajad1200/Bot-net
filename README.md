@@ -8,11 +8,11 @@
 
 ## Commands
 
-| Use helpold to see old help or Use help to see new help |
+| Use help to see help list |
 |:--------|:------------|
-| [#!/]helpold Or help  |
+| [#!/]help |
 
-| Use (setlang ar) To use bot in Arabic or To use bot in English send (setlang en) |
+| Use (setlang ar) To use bot in Arabic >Or< To use bot in English send (setlang en) |
 |:--------|:------------|
 | [#!/]setlang ar Or en | 
 
