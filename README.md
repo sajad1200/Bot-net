@@ -23,13 +23,15 @@
 
 # Installation
 
-******************
+````
 # Let's install the bot.
 
 # Open new terminal and type :
+
 redis-server
 
 # Open a new teminal agin and type :
+
 sudo apt-get update
 cd $HOME
 git clone https://github.com/sajad1200/Bot-net.git
@@ -37,7 +39,12 @@ cd Bot-net
 chmod +x Botnet.sh
 ./Botnet.sh install
 ./Botnet.sh # Enter a phone number & confirmation code.
-******************
+
+# And run thes files :
+
+Netredis.sh
+Botnet.sh
+``````
 ### One command
 To install everything in one command, use:
 ```sh
