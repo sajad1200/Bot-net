@@ -2610,128 +2610,233 @@ redis:set(hash, true)
 return "*تم ضبط المجموعه على اللغة : العربية*"
 end
 end
-if matches[1] == "helpold" and is_mod(msg) then
+
+
+if matches[1] == "help" and is_mod(msg) then
+if not lang then
 text = [[
-*Bot-net V[1.2] Commands:*
+*Botnet Commands:*
+
 *!setowner* `[username|id|reply]` 
 _Set Group Owner(Multi Owner)_
+
 *!remowner* `[username|id|reply]` 
  _Remove User From Owner List_
+
 *!promote* `[username|id|reply]` 
 _Promote User To Group Admin_
+
 *!demote* `[username|id|reply]` 
 _Demote User From Group Admins List_
+
 *!setflood* `[1-50]`
 _Set Flooding Number_
+
 *!silent* `[username|id|reply]` 
 _Silent User From Group_
+
 *!unsilent* `[username|id|reply]` 
 _Unsilent User From Group_
+
 *!kick* `[username|id|reply]` 
 _Kick User From Group_
+
 *!ban* `[username|id|reply]` 
 _Ban User From Group_
+
 *!unban* `[username|id|reply]` 
 _UnBan User From Group_
+
 *!res* `[username]`
 _Show User ID_
+
 *!id* `[reply]`
 _Show User ID_
+
 *!whois* `[id]`
 _Show User's Username And Name_
+
 *!lock* `[link | tag | edit | webpage | bots | spam | flood | markdown | mention]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
+
 *!unlock* `[link | tag | edit | webpage | bots | spam | flood | markdown | mention]`
 _If This Actions Unlock, Bot Not Delete Them_
-*!mute* `[gifs | photo | doc | sticker | video | text | forward | loc | audio | voice | contact | all]`
+
+*!mute* `[gifs | photo | document | sticker | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
-*!unmute* `[gifs | photo | doc | sticker | video | text | forward | loc | audio | voice | contact | all]`
+
+*!unmute* `[gifs | photo | document | sticker | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Unlock, Bot Not Delete Them_
+
 *!set*`[rules | name | photo | link | about]`
 _Bot Set Them_
+
 *!clean* `[bans | mods | bots | rules | about | silentlist]`   
 _Bot Clean Them_
+
 *!pin* `[reply]`
 _Pin Your Message_
+
 *!unpin* 
 _Unpin Pinned Message_
+
 *!settings*
 _Show Group Settings_
+
 *!mutelist*
 _Show Mutes List_
+
 *!silentlist*
 _Show Silented Users List_
+
 *!banlist*
 _Show Banned Users List_
+
 *!ownerlist*
 _Show Group Owners List_ 
+
 *!modlist* 
 _Show Group Moderators List_
+
 *!rules*
 _Show Group Rules_
+
 *!about*
 _Show Group Description_
-*!id*
-_Show Your And Chat ID_
+
+*!delall*
+_Delete All msg By Reply_
+
+*setlang* `[en / ar]`
+_To use bot english or arabic_
+
 *!gpinfo*
 _Show Group Information_
-*!link*
-_Show Group Link_
+
+*!setwelcome [text]*
+_To add welcome msg_
+
+*!delwelcome* 
+_To delete welcome msg_
+
+_Show Group Information_
 _You Can Use_ *[!/#]* _To Run The Commands_
-_This Help List Only For_ *Moderators/Owners!*
-_Its Means, Only Group_ *Moderators/Owners* _Can Use It!_
-]]
-return text
-end
-if matches[1] == "help" and is_mod(msg) then
+_This Help List Only For_ *Moderators/Owners*
+*Developer : Sajad Aliraqe - @Al_Srai*]]
+
+
+elseif lang then
+
 text = [[
-📃 - *Bot - Net* _Commands_ :
-    
+*أوامر البوت بالعربية:*
 
-👁‍🗨 - _Thes Commands for_ *admins*  :
+*!setowner* `[username|id|reply]` 
+_رفع أداري عبر رد او يوزر_
 
-*💭 - /setowner* `[رفع أداري عبر رد او يوزر]` 
-*💭 - /remowner* `[حذف أداري عبر رد او يوزر]` 
-*💭 - /promote*  `[رفع أدمن عبر رد او يوزر]` 
-*💭 - /demote*   `[حذف أدمن عبر رد او يوزر]` 
+*!remowner* `[username|id|reply]`
+ _حذف أداري عبر رد او يوزر_
 
-➕
+*!promote* `[username|id|reply]` 
+_رفع ادمن عبر رد او يوزر_
 
-👁‍🗨 - _Commands_ *for control member*  :
+*!demote* `[username|id|reply]` 
+_حذف ادمن عبر رد او يوزر_
 
-*💭 - /kick* `[طرد عبر رد ]`
-*💭 - /ban | unban* `[حضر , فك حضر عبر رد]`
-*💭 - /silent | unsilent* `[صامت , فك صامت عبر رد]`
-*💭 - /pin | unpin* `[تثبيت رسائل , ألغائها عبر رد]`
-*💭 - /id* `[عبر رد]`
-*💭 - /deall* `[حذف جميع الرسائل عبر رد او يوزر]
-*💭 - /gpinfo* `[أستعراض معلومات المجموعه]`
-*💭 - /setlang ar <> en* `[لتفعيل البوت بالغه العربيه او الانكليزية]`
+*!setflood* `[1-50]`
+_اضافه رقم لعدد التكرار_
 
-➕
+*setlang* `[en / ar]`
+_استخدام البوت بالغة العربية او الانجليزية_
 
-👁‍🗨 - _Commands for_ *all lists*  :
+*!silent* `[username|id|reply]` 
+_كتم مستخدم عبر رد او يوزر_
 
-*💭 - /silentlist* `[قائمه المكتومين]`
-*💭 - /banlist* `[قائمه المحضورين]`
-*💭 - /ownerlist* `[قائمه الاداريين]`
-*💭 - /modlist* `[قائمه المشرفين]`
-*💭 - /adminlist* `[قائمه الادمنية]`
+*!unsilent* `[username|id|reply]` 
+_الغاء الكتم عبر رد او يوزر_
 
-➕
+*!kick* `[username|id|reply]` 
+_طرد عبر رد او يوزر_
 
-👁‍🗨 - _Commands_ for *Security Lock & mute [AR]* :
+*!ban* `[username|id|reply]` 
+_حضر عبر رد او يوزر_
 
-*💭 - /lock | unlock* `[link | edit | bots | spam | flood ]`
-*💭 - /mute | unmute* `[gifs | photo | sticker | video ]`
-*💭 - /mute | unmute* `[forward  | audio | voice | text ]`
-*💭 - /mute | unmute* `[tag |contact | all ]`
-*💭 - /clean* `[bans | mods | bots | silentlist]`   
+*!unban* `[username|id|reply]` 
+_الغاء الحضر عبر رد او يوزر_
 
-_You Can Use_ *[!/#]* _To Run The Commands_
-• _Developed By_ *Sajad Aliraqe - @Al_Srai*
-• _Channel :_ *@Al_Srai1*
-]]
+*!id* `[reply]`
+_عرض الايدي لخاص بك او عبر الرد_
+
+*!whois* `[id]`
+_اضهار اليوزر نيم والاسم عبر الايدي_
+
+*!lock* `[link | tag | edit | bots | spam | flood]`
+_قفل روابط , تاك , تعديل رسائل , بوتات , سبام ولتكرار _
+
+*!unlock* `[link | tag | edit | bots | spam | flood]`
+_الغاء قفل كل مما سبق_
+
+*!mute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
+_كتم ملحقات حماية المجموعة او كتمها جميعأ_
+
+*!unmute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
+_الغاء كتم ملحقات حماية المجموعة_
+
+*!clean* `[bans | mods | bots | silentlist]`   
+_تنضيف كل قوائم , الحضر ولمشرفين والمكتومين_
+
+*!pin* `[reply]`
+_تثبيت رسالة عبر الرد_
+
+*!unpin* 
+_الغاء تثبيت الرسالة عبر رد_
+
+*!delall* `[reply]`
+_حذف جميع الرسائل العضو عبر الرد_
+
+*!settings*
+_اعدادت المجموعة_
+
+*!mutelist*
+_قائمه ملحقات حماية المجموعة_
+
+*!silentlist*
+_قائمه المكتومين_
+
+*!banlist*
+_قائمه المحظوريين_
+
+*!ownerlist*
+_قائمه الاداريين_ 
+
+*!modlist* 
+_قائمه المشرفيين_
+
+*!rules*
+_رؤيه القوانين_
+
+*!about*
+_رؤيه وصف المجموعة_
+
+*!gpinfo*
+_اضهار معلومات المجموعة_
+
+*!link*
+_أضهار الرابط_
+
+*!setwelcome [text]*
+_لااضافة رسالة ترحيب_
+
+
+*!delwelcome* 
+_لحذف رسالة الترحيب_
+
+
+_[!/#] يمكنك استخدام كل  الشارحات بأضهار الاوامر
+
+فقط الاداريين والمشرفيين يمكنهم أضهار قائمه المساعدة!_
+
+*المطور : @Al_Srai*]]
+end
 return text
 end
 end
@@ -2773,7 +2878,6 @@ patterns ={
 "^[!/#](res) (.*)$",
 "^[!/#](whois) (%d+)$",
 "^[!/#](help)$",
-"^[!/#](helpold)$",
 "^[!/#](setlang) (.*)$",
 "^([https?://w]*.?t.me/joinchat/%S+)$",
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
