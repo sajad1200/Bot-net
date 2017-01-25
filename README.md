@@ -8,7 +8,7 @@
 
 ## Commands
 
-| Use help to see help list |
+| Use (help) to see help list |
 |:--------|:------------|
 | [#!/]help |
 
