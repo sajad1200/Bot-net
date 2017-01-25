@@ -54,9 +54,10 @@ cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && 
 * * *
 
 ### Sudo And Bot
-After you run the bot for first time, send it `/id`. Get your ID and stop the bot.
 
-Open ./bot/bot.lua and add your ID to the "sudo_users" section in the following format:
+#After you run the bot for first time, send it `/id`. Get your ID and stop the bot.
+
+#Open ./Bot-net./data./Config.lua And add your id in there
 ```
     sudo_users = {
     321681775,
@@ -64,11 +65,6 @@ Open ./bot/bot.lua and add your ID to the "sudo_users" section in the following 
     YourID
   }
 ```
-run file netredis.lua
-add your bot ID at line 4
-add your ID at line 82 in bot.lua
-add your ID at line 235 in tools.lua
-Then restart the bot.
 
 # Support and development
 
