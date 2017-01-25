@@ -48,16 +48,16 @@ Botnet.sh
 ### One command
 To install everything in one command, use:
 ```sh
-cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
+sudo apt-get update && cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
 ```
 
 * * *
 
 ### Sudo And Bot
 
-After you run the bot for first time, send it `/id`. Get your ID and stop the bot.
+After you run the bot for first time, send it `/id`. Get your ID and `stop the bot.`
 
-Open ./Bot-net./data./Config.lua And add your id in there
+Open `./Bot-net./data./Config.lua` And add your id in there
 ```
     sudo_users = {
     321681775,
