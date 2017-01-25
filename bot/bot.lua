@@ -78,16 +78,22 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "Banhammer",
-    "Groupmanager",
-    "Msg-checks",
-    "Plugins",
-    "Tools"
+    "banhammer",
+    "groupmanager",
+    "msg-checks",
+    "plugins",
+    "tools"
  },
-    sudo_users = {321681775},
+    sudo_users = {157059515},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
+   info_text = [[>> Bot-Net v2
+
+• Developer : @Al_Srai  - Sajad Aliraqe
+
+• Channel : @Al_Sri1
+]],
   }
   serialize_to_file(config, './data/config.lua')
   print ('saved config into conf.lua')
@@ -404,7 +410,7 @@ end
   end
   return var
 end
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
+
  function is_banned(user_id, chat_id)
   local var = false
   local data = load_data(_config.moderation.data)
@@ -783,4 +789,3 @@ elseif msg.content_.ID == "MessageGame" then
   end
 
 end
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
