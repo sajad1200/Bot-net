@@ -2713,12 +2713,6 @@ _To use bot english or arabic_
 *!gpinfo*
 _Show Group Information_
 
-*!setwelcome [text]*
-_To add welcome msg_
-
-*!delwelcome* 
-_To delete welcome msg_
-
 _Show Group Information_
 _You Can Use_ *[!/#]* _To Run The Commands_
 _This Help List Only For_ *Moderators/Owners*
@@ -2822,14 +2816,6 @@ _اضهار معلومات المجموعة_
 
 *!link*
 _أضهار الرابط_
-
-*!setwelcome [text]*
-_لااضافة رسالة ترحيب_
-
-
-*!delwelcome* 
-_لحذف رسالة الترحيب_
-
 
 _[!/#] يمكنك استخدام كل  الشارحات بأضهار الاوامر
 
