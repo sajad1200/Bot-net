@@ -1,8 +1,9 @@
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
+
 tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
 feedparser = (loadfile "./libs/feedparser.lua")()
-our_id = 265541133 -- Put Here Your Bot ID 
+our_id = 265541133 -- Put Here Your Bot ID
+--ایدی رباتتونو اینجا بزارید
 URL = require "socket.url"
 http = require "socket.http"
 https = require "ssl.https"
@@ -79,7 +80,7 @@ function create_config( )
   config = {
     enabled_plugins = {
     "banhammer",
-    "broupmanager",
+    "groupmanager",
     "msg-checks",
     "plugins",
     "tools"
@@ -88,7 +89,7 @@ function create_config( )
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-   info_text = [[>> Bot-Net v2
+    info_text = [[>> Bot-Net v2
 • Developer : @Al_Srai  - Sajad Aliraqe
 • Channel : @Al_Sri1
 ]],
