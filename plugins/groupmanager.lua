@@ -2662,10 +2662,10 @@ _If This Actions Lock, Bot Check Actions And Delete Them_
 *!unlock* `[link | tag | edit | webpage | bots | spam | flood | markdown | mention]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*!mute* `[gifs | photo | document | sticker | video | text | forward | location | audio | voice | contact | all]`
+*!mute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*!unmute* `[gifs | photo | document | sticker | video | text | forward | location | audio | voice | contact | all]`
+*!unmute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
 _If This Actions Unlock, Bot Not Delete Them_
 
 *!set*`[rules | name | photo | link | about]`
@@ -2713,10 +2713,13 @@ _To use bot english or arabic_
 *!gpinfo*
 _Show Group Information_
 
+*!link*
+_Show Group Link_
+
 _Show Group Information_
 _You Can Use_ *[!/#]* _To Run The Commands_
 _This Help List Only For_ *Moderators/Owners*
-*Developer : Sajad Aliraqe - @Al_Srai*]]
+*Developer :* _Sajad Aliraqe - @Al_Srai_]]
 
 
 elseif lang then
@@ -2815,13 +2818,13 @@ _رؤيه وصف المجموعة_
 _اضهار معلومات المجموعة_
 
 *!link*
-_أضهار الرابط_
+_أضهار الرابط
 
 _[!/#] يمكنك استخدام كل  الشارحات بأضهار الاوامر
 
 فقط الاداريين والمشرفيين يمكنهم أضهار قائمه المساعدة!_
 
-*المطور : @Al_Srai*]]
+*المطور : سجـاد ألعـراقـي  @Al_Srai*]]
 end
 return text
 end
