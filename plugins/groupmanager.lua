@@ -1117,7 +1117,7 @@ local settings = data[tostring(target)]["settings"]
  text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*Group Language* : *EN*"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "*أعدادات المجموعة :*\n_قفل تعديل الرسائل :_ *"..settings.lock_edit.."*\n_قفل الروابط :_ *"..settings.lock_link.."*\n_قفل التاك :_ *"..settings.lock_tag.."*\n_قفل التكرار:_ *"..settings.flood.."*\n_قفل السبام:_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل صفحات الويب :_ *"..settings.lock_webpage.."*\n_قفل الفونت:_ *"..settings.lock_markdown.."*\n_الحمايه من البوتات :_ *"..settings.lock_bots.."*\n_ضبط التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_زبان سوپرگروه_ : *AR*"
+ text = "*أعدادات المجموعة :*\n_قفل تعديل الرسائل :_ *"..settings.lock_edit.."*\n_قفل الروابط :_ *"..settings.lock_link.."*\n_قفل التاك :_ *"..settings.lock_tag.."*\n_قفل التكرار:_ *"..settings.flood.."*\n_قفل السبام:_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل صفحات الويب :_ *"..settings.lock_webpage.."*\n_قفل الفونت:_ *"..settings.lock_markdown.."*\n_الحمايه من البوتات :_ *"..settings.lock_bots.."*\n_ضبط التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_لغة ألمجموعة_ : *AR*"
 end
 return text
 end
@@ -2814,11 +2814,11 @@ _رؤيه القوانين_
 *!about*
 _رؤيه وصف المجموعة_
 
+*!link*
+_أضهار رابط المجموعة_
+
 *!gpinfo*
 _اضهار معلومات المجموعة_
-
-*!link*
-_أضهار الرابط
 
 _[!/#] يمكنك استخدام كل  الشارحات بأضهار الاوامر
 
