@@ -1111,13 +1111,23 @@ if not data[tostring(target)]["settings"]["lock_webpage"] then
 data[tostring(target)]["settings"]["lock_webpage"] = "no"		
 end
 end
+
+local expiretime = redis:hget('expiretime', msg.chat_id_)
+    local expire = ''
+  if not expiretime then
+  expire = expire..'Unlimited'
+  else
+   local now = tonumber(os.time())
+   expire =  expire..math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1
+ end
+ 
 -- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
 if not lang then
 local settings = data[tostring(target)]["settings"] 
- text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*Group Language* : *EN*"
+ text = "*Group* `Settings:`\n*Lock edit :* `"..settings.lock_edit.."`\n*Lock links :* `"..settings.lock_link.."`\n*Lock tags :* `"..settings.lock_tag.."`\n*Lock flood :* `"..settings.flood.."`\n*Lock spam :* `"..settings.lock_spam.."`\n*Lock mention :* `"..settings.lock_mention.."`\n*Lock webpage :* `"..settings.lock_webpage.."`\n*Lock markdown :* `"..settings.lock_markdown.."`\n*Bots protection :* `"..settings.lock_bots.."`\n*Flood sensitivity :* `"..NUM_MSG_MAX.."`\n*Expire Time :* `"..expire.."`\n*____________________*\n*Group Language* : `EN`"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "*أعدادات المجموعة :*\n_قفل تعديل الرسائل :_ *"..settings.lock_edit.."*\n_قفل الروابط :_ *"..settings.lock_link.."*\n_قفل التاك :_ *"..settings.lock_tag.."*\n_قفل التكرار:_ *"..settings.flood.."*\n_قفل السبام:_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل صفحات الويب :_ *"..settings.lock_webpage.."*\n_قفل الفونت:_ *"..settings.lock_markdown.."*\n_الحمايه من البوتات :_ *"..settings.lock_bots.."*\n_ضبط التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_لغة ألمجموعة_ : *AR*"
+ text = "`أعدادات` *ألمجموعة*:\n*قفل تعديل الرسائل :* `"..settings.lock_edit.."`\n*قفل الروابط :* `"..settings.lock_link.."`\n*قفل التاك :* `"..settings.lock_tag.."`\n*قفل التكرار:* `"..settings.flood.."`\n*قفل السبام:* `"..settings.lock_spam.."`\n*قفل المنشن :* `"..settings.lock_mention.."`\n*قفل صفحات الويب :* `"..settings.lock_webpage.."`\n*قفل الفونت:* `"..settings.lock_markdown.."`\n*الحمايه من البوتات :* `"..settings.lock_bots.."`\n*ضبط التكرار :* `"..NUM_MSG_MAX.."`\n*تاريخ ألانقضاء :* `"..expire.."`\n*____________________*\n*لغة ألمجموعة* : `AR`"
 end
 return text
 end
@@ -2085,10 +2095,10 @@ end
 -- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
 if not lang then
 local mutes = data[tostring(target)]["mutes"] 
- text = " *Group Mute List* : \n_Mute all : _ *"..mutes.mute_all.."*\n_Mute gif :_ *"..mutes.mute_gif.."*\n_Mute text :_ *"..mutes.mute_text.."*\n_Mute inline :_ *"..mutes.mute_inline.."*\n_Mute game :_ *"..mutes.mute_game.."*\n_Mute photo :_ *"..mutes.mute_photo.."*\n_Mute video :_ *"..mutes.mute_video.."*\n_Mute audio :_ *"..mutes.mute_audio.."*\n_Mute voice :_ *"..mutes.mute_voice.."*\n_Mute sticker :_ *"..mutes.mute_sticker.."*\n_Mute contact :_ *"..mutes.mute_contact.."*\n_Mute forward :_ *"..mutes.mute_forward.."*\n_Mute location :_ *"..mutes.mute_location.."*\n_Mute document :_ *"..mutes.mute_document.."*\n_Mute TgService :_ *"..mutes.mute_tgservice.."*\n*____________________*\n*Group Language* : *EN*"
+ text = " *Group* `Mute List` : \n*Mute all : * `"..mutes.mute_all.."`\n*Mute gif :* `"..mutes.mute_gif.."`\n*Mute text :* `"..mutes.mute_text.."`\n*Mute inline :* `"..mutes.mute_inline.."`\n*Mute game :* `"..mutes.mute_game.."`\n*Mute photo :* `"..mutes.mute_photo.."`\n*Mute video :* `"..mutes.mute_video.."`\n*Mute audio :* `"..mutes.mute_audio.."`\n*Mute voice :* `"..mutes.mute_voice.."`\n*Mute sticker :* `"..mutes.mute_sticker.."`\n*Mute contact :* `"..mutes.mute_contact.."`\n*Mute forward :* `"..mutes.mute_forward.."`\n*Mute location :* `"..mutes.mute_location.."`\n*Mute document :* `"..mutes.mute_document.."`\n*Mute TgService :* `"..mutes.mute_tgservice.."`\n*____________________*\n*Group Language* : `EN`"
 else
 local mutes = data[tostring(target)]["mutes"] 
- text = " *قائمه كتم المجموعة* : \n_ كتم ألكل : _ *"..mutes.mute_all.."*\n_كتم صور متحركه :_ *"..mutes.mute_gif.."*\n_كتم الكتابة :_ *"..mutes.mute_text.."*\n_كتم الانلاين :_ *"..mutes.mute_inline.."*\n_كتم الالعاب :_ *"..mutes.mute_game.."*\n_كتم الصور :_ *"..mutes.mute_photo.."*\n_كتم الفيديو :_ *"..mutes.mute_video.."*\n_كتم ألصوت :_ *"..mutes.mute_audio.."*\n_كتم البصمات :_ *"..mutes.mute_voice.."*\n_كتم ستيكر :_ *"..mutes.mute_sticker.."*\n_كتم جهات الاتصال :_ *"..mutes.mute_contact.."*\n_كتم أعادة التوجيه :_ *"..mutes.mute_forward.."*\n_كتم المواقع:_ *"..mutes.mute_location.."*\n_كتم المستندات :_ *"..mutes.mute_document.."*\n_كتم خدمات التيليجرام:_ *"..mutes.mute_tgservice.."*\n*____________________*\n_لغة ألمجموعة_ : *AR*"
+ text = " `قائمه كتم` *ألمجموعة* : \n*كتم ألكل :* `"..mutes.mute_all.."`\n*كتم صور متحركه :* `"..mutes.mute_gif.."`\n*كتم الكتابة :* `"..mutes.mute_text.."`\n*كتم الانلاين :* `"..mutes.mute_inline.."`\n*كتم الالعاب :* `"..mutes.mute_game.."`\n*كتم الصور :* `"..mutes.mute_photo.."`\n*كتم الفيديو :* `"..mutes.mute_video.."`\n*كتم ألصوت :* `"..mutes.mute_audio.."`\n*كتم البصمات :* `"..mutes.mute_voice.."`\n*كتم ستيكر :* `"..mutes.mute_sticker.."*`\n*كتم جهات الاتصال :* `"..mutes.mute_contact.."`\n*كتم أعادة التوجيه :* `"..mutes.mute_forward.."`\n*كتم المواقع:* `"..mutes.mute_location.."`\n*كتم المستندات :* `"..mutes.mute_document.."`\n*كتم خدمات التيليجرام:* `"..mutes.mute_tgservice.."`\n*____________________*\n*لغة ألمجموعة* : `AR`"
 end
 return text
 end
