@@ -501,14 +501,14 @@ end
      if not lang then
        return tdcli.sendMessage(arg.chat_id, 0, 1, 'Info for [ '..data.id_..' ] :\nUserName : '..username..'\nName : '..data.first_name_, 1)
    else
-       return tdcli.sendMessage(arg.chat_id, 0, 1, '*معلومات ألـ* [ '..data.id_..' ] :\n*یوزرنیم* : '..username..'\n*الاسم* : '..data.first_name_, 1)
+       return tdcli.sendMessage(arg.chat_id, 0, 1, '*معلومات ألـ* [ '..data.id_..' ] :\n*يوزرنيم* : '..username..'\n*الاسم* : '..data.first_name_, 1)
       end
    end
  else
     if not lang then
   return tdcli.sendMessage(arg.chat_id, "", 0, "_User not founded_", 0, "md")
    else
-  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر یافت نشد_", 0, "md")
+  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر يافت نشد_", 0, "md")
     end
   end
 end
@@ -966,7 +966,7 @@ local lock_markdown = data[tostring(target)]["settings"]["lock_markdown"]
 if not lang then
 return "*Markdown* _Posting Is Not Locked_"
 elseif lang then
-return "ارسال پیام های دارای فونت در گروه ممنوع نمیباشد"
+return "ارسال پيام هاي داراي فونت در گروه ممنوع نميباشد"
 end
 else 
 data[tostring(target)]["settings"]["lock_markdown"] = "no" save_data(_config.moderation.data, data) 
@@ -2461,9 +2461,9 @@ end
   if matches[1] == "rules" then
  if not data[tostring(chat)]['rules'] then
    if not lang then
-     rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban."
+     rules = "?? The Default Rules :\n1? No Flood.\n2? No Spam.\n3? No Advertising.\n4? Try to stay on topic.\n5? Forbidden any racist, sexual, homophobic or gore content.\n?? Repeated failure to comply with these rules will cause ban."
     elseif lang then
-       rules = "ℹ️ ألقوانين الافتراضية :\n1⃣ لاتقم بلتكرار.\n2⃣ ممنوع اسبام.\n3⃣ ممنوع عمل بلاغ.\n4⃣ يمنع أي محتوى جنسي او طائفي .\n➡️ عدم الامتثال لهذه القواعد سوف يسبب الحضر."
+       rules = "?? ألقوانين الافتراضية :\n1? لاتقم بلتكرار.\n2? ممنوع اسبام.\n3? ممنوع عمل بلاغ.\n4? يمنع أي محتوى جنسي او طائفي .\n?? عدم الامتثال لهذه القواعد سوف يسبب الحضر."
  end
         else
      rules = "*Group Rules :*\n"..data[tostring(chat)]['rules']
@@ -2623,7 +2623,6 @@ end
 
 
 if matches[1] == "help" and is_mod(msg) then
-if not lang then
 text = [[
 *Botnet Commands:*
 
@@ -2672,14 +2671,15 @@ _If This Actions Lock, Bot Check Actions And Delete Them_
 *!unlock* `[link | tag | edit | webpage | bots | spam | flood | markdown | mention]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*!mute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
+*!mute* `[gifs | photo | document | sticker | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*!unmute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
+*!unmute* `[gifs | photo | document | sticker | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Unlock, Bot Not Delete Them_
 
 *!set*`[rules | name | photo | link | about]`
 _Bot Set Them_
+
 
 *!clean* `[bans | mods | bots | rules | about | silentlist]`   
 _Bot Clean Them_
@@ -2714,11 +2714,8 @@ _Show Group Rules_
 *!about*
 _Show Group Description_
 
-*!delall*
-_Delete All msg By Reply_
-
-*setlang* `[en / ar]`
-_To use bot english or arabic_
+*!id*
+_Show Your And Chat ID_
 
 *!gpinfo*
 _Show Group Information_
@@ -2726,118 +2723,11 @@ _Show Group Information_
 *!link*
 _Show Group Link_
 
-_Show Group Information_
 _You Can Use_ *[!/#]* _To Run The Commands_
-_This Help List Only For_ *Moderators/Owners*
-*Developer :* _Sajad Aliraqe - @Al_Srai_]]
-
-
-elseif lang then
-
-text = [[
-*أوامر البوت بالعربية:*
-
-*!setowner* `[username|id|reply]` 
-_رفع أداري عبر رد او يوزر_
-
-*!remowner* `[username|id|reply]`
- _حذف أداري عبر رد او يوزر_
-
-*!promote* `[username|id|reply]` 
-_رفع ادمن عبر رد او يوزر_
-
-*!demote* `[username|id|reply]` 
-_حذف ادمن عبر رد او يوزر_
-
-*!setflood* `[1-50]`
-_اضافه رقم لعدد التكرار_
-
-*setlang* `[en / ar]`
-_استخدام البوت بالغة العربية او الانجليزية_
-
-*!silent* `[username|id|reply]` 
-_كتم مستخدم عبر رد او يوزر_
-
-*!unsilent* `[username|id|reply]` 
-_الغاء الكتم عبر رد او يوزر_
-
-*!kick* `[username|id|reply]` 
-_طرد عبر رد او يوزر_
-
-*!ban* `[username|id|reply]` 
-_حضر عبر رد او يوزر_
-
-*!unban* `[username|id|reply]` 
-_الغاء الحضر عبر رد او يوزر_
-
-*!id* `[reply]`
-_عرض الايدي لخاص بك او عبر الرد_
-
-*!whois* `[id]`
-_اضهار اليوزر نيم والاسم عبر الايدي_
-
-*!lock* `[link | tag | edit | bots | spam | flood]`
-_قفل روابط , تاك , تعديل رسائل , بوتات , سبام ولتكرار _
-
-*!unlock* `[link | tag | edit | bots | spam | flood]`
-_الغاء قفل كل مما سبق_
-
-*!mute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
-_كتم ملحقات حماية المجموعة او كتمها جميعأ_
-
-*!unmute* `[gif | photo | document | sticker | video | text | forward | audio | voice | contact | all]`
-_الغاء كتم ملحقات حماية المجموعة_
-
-*!clean* `[bans | mods | bots | silentlist]`   
-_تنضيف كل قوائم , الحضر ولمشرفين والمكتومين_
-
-*!pin* `[reply]`
-_تثبيت رسالة عبر الرد_
-
-*!unpin* 
-_الغاء تثبيت الرسالة عبر رد_
-
-*!delall* `[reply]`
-_حذف جميع الرسائل العضو عبر الرد_
-
-*!settings*
-_اعدادت المجموعة_
-
-*!mutelist*
-_قائمه ملحقات حماية المجموعة_
-
-*!silentlist*
-_قائمه المكتومين_
-
-*!banlist*
-_قائمه المحظوريين_
-
-*!ownerlist*
-_قائمه الاداريين_ 
-
-*!modlist* 
-_قائمه المشرفيين_
-
-*!rules*
-_رؤيه القوانين_
-
-*!about*
-_رؤيه وصف المجموعة_
-
-*!link*
-_أضهار رابط المجموعة_
-
-*!gpinfo*
-_اضهار معلومات المجموعة_
-
-_[!/#] يمكنك استخدام كل  الشارحات بأضهار الاوامر
-
-فقط الاداريين والمشرفيين يمكنهم أضهار قائمه المساعدة!_
-
-*المطور : سجـاد ألعـراقـي  @Al_Srai*]]
+_This Help List Only For_ *Moderators/Owners!*
+_Its Means, Only Group_ *Moderators/Owners* _Can Use It!_]]
 end
 return text
-end
 end
 return {
 patterns ={
