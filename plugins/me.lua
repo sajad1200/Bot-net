@@ -1,5 +1,3 @@
--- Coded By Sajad Aliraqe - @Al_Srai
-
 -- Begin myinfo.lua
 local function run(msg, matches)
 	if matches[1]:lower() == 'me' then
@@ -25,17 +23,17 @@ local function run(msg, matches)
 				end
 				local rank
 				if is_sudo(msg) then
-					rank = 'You Are Sudo'
+					rank = 'Sudo'
 				elseif is_owner(msg) then
-					rank = 'You Are Bot Owner'
+					rank = 'Bot Owner'
 				elseif is_admin(msg) then
-					rank = 'You Are Admin'
+					rank = 'Admin'
 				elseif is_mod(msg) then
-					rank = 'You Are Moderator'
+					rank = 'Moderator'
 				else
-					rank = 'You Are Just a Member'
+					rank = 'Group Member'
 				end
-				local text = '<b>Information:</b>\n<b>First Name:</b> <i>'..data.first_name_..'</i>\n<b>Last Name:</b> <i>'..lastName..'</i>\n<b>Username:</b> '..username..'\n<b>ID:</b> [ <code>'..data.id_..'</code> ]\n<b>Group ID:</b> [ <code>'..arg.chat_id..'</code> ]\n<b>Phone Number:</b> [ <code>'..telNum..'</code> ]\n<b>Rank:</b> </i>'..rank..'</i>'
+				local text = '<b>Information:</b>\n<b>First Name:</b> <i>'..data.first_name_..'</i>\n<b>Last Name:</b> <i>'..lastName..'</i>\n<b>Username:</b> '..username..'\n<b>ID:</b> [ <code>'..data.id_..'</code> ]\n<b>Group ID:</b> [ <code>'..arg.chat_id..'</code> ]\n<b>Phone Number:</b> [ <code>'..telNum..'</code> ]\n<b>Rank:</b> <i>'..rank..'</i>'
 				tdcli.sendMessage(arg.chat_id, msg.id_, 1, text, 1, 'html')
 			end
 		end
@@ -43,12 +41,7 @@ local function run(msg, matches)
 	end
 end
 
-return { patterns =
-    
-    { "^[/!#]([Mm][Ee])$" }, 
-    
-    run = run
-    
-}
-
--- Coded By Sajad Aliraqe - @Al_Srai
+return { patterns = 
+	{ "^[/!#]([Mm][Ee])$" }, 
+	run = run
+	}
