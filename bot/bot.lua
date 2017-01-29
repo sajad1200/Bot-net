@@ -82,9 +82,10 @@ function create_config( )
     "groupmanager",
     "msg-checks",
     "plugins",
+    "me",
     "tools"
  },
-    sudo_users = {157059515},
+    sudo_users = {321681775},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
