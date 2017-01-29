@@ -2772,6 +2772,5 @@ patterns ={
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
 },
 run=run
-}
 
 -- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
