@@ -2461,11 +2461,11 @@ end
   if matches[1] == "rules" then
  if not data[tostring(chat)]['rules'] then
    if not lang then
-     rules = "?? The Default Rules :\n1? No Flood.\n2? No Spam.\n3? No Advertising.\n4? Try to stay on topic.\n5? Forbidden any racist, sexual, homophobic or gore content.\n?? Repeated failure to comply with these rules will cause ban."
+     rules = "*The Default Rules* :\n- No Flood.\n- No Spam.\n- No Advertising.\n- Try to stay on topic.\n- Forbidden any racist, sexual, homophobic or gore content.\n- Repeated failure to comply with these rules will cause ban."
     elseif lang then
-       rules = "?? ألقوانين الافتراضية :\n1? لاتقم بلتكرار.\n2? ممنوع اسبام.\n3? ممنوع عمل بلاغ.\n4? يمنع أي محتوى جنسي او طائفي .\n?? عدم الامتثال لهذه القواعد سوف يسبب الحضر."
- end
-        else
+     rules = "*القوانين الافتراضية* :\n- لاتقم بلتكرار.\n- ممنوع اسبام.\n- ممنوع عمل بلاغ.\n- يمنع أي محتوى جنسي او طائفي .\n- عدم الامتثال لهذه القواعد سوف يسبب الحضر."
+    end
+   else
      rules = "*Group Rules :*\n"..data[tostring(chat)]['rules']
       end
     return rules
@@ -2772,5 +2772,6 @@ patterns ={
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
 },
 run=run
+}
 
 -- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
