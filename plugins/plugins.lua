@@ -24,7 +24,7 @@ local function plugin_exists( name )
 end
 
 local function list_all_plugins(only_enabled)
-  local tmp = check_markdown('\n\n@Al_Srai1')
+  local tmp = '\n\n@Al_Srai1'
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
@@ -82,10 +82,10 @@ end
 
 
 local function enable_plugin( plugin_name )
-  print('checking if '..check_markdown(plugin_name)..' exists')
+  print('checking if '..plugin_name..' exists')
   -- Check if plugin is enabled
   if plugin_enabled(plugin_name) then
-    return ''..check_markdown(plugin_name)..' _is enabled_'
+    return ''..plugin_name..' _is enabled_'
   end
   -- Checks if plugin exists
   if plugin_exists(plugin_name) then
@@ -103,12 +103,12 @@ end
 local function disable_plugin( name, chat )
   -- Check if plugins exists
   if not plugin_exists(name) then
-    return ' '..check_markdown(name)..' _does not exists_'
+    return ' '..name..' _does not exists_'
   end
   local k = plugin_enabled(name)
   -- Check if plugin is enabled
   if not k then
-    return ' '..check_markdown(name)..' _not enabled_'
+    return ' '..name..' _not enabled_'
   end
   -- Disable and reload
   table.remove(_config.enabled_plugins, k)
