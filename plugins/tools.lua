@@ -81,10 +81,10 @@ if not tonumber(data.sender_user_id_) then return false end
 local function adminprom_cb(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
-if data.username_ then
-user_name = '@'..check_markdown(data.username_)
+if data.username_ and not data.username_:match("_") then
+user_name = '@'..data.username_
 else
-user_name = check_markdown(data.first_name_)
+user_name = data.first_name_
 end
 if is_admin1(tonumber(data.id_)) then
    if not lang then
@@ -111,10 +111,10 @@ local function admindem_cb(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
 	local nameid = index_function(tonumber(data.id_))
-if data.username_ then
-user_name = '@'..check_markdown(data.username_)
+if data.username_ and not data.username_:match("_") then
+user_name = '@'..data.username_
 else
-user_name = check_markdown(data.first_name_)
+user_name = data.first_name_
 end
 if not is_admin1(data.id_) then
    if not lang then
@@ -140,10 +140,10 @@ tdcli_function ({
 local function visudo_cb(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
-if data.username_ then
-user_name = '@'..check_markdown(data.username_)
+if data.username_ and not data.username_:match("_") then
+user_name = '@'..data.username_
 else
-user_name = check_markdown(data.first_name_)
+user_name = data.first_name_
 end
 if already_sudo(tonumber(data.id_)) then
   if not lang then
@@ -170,10 +170,10 @@ tdcli_function ({
 local function desudo_cb(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
-if data.username_ then
-user_name = '@'..check_markdown(data.username_)
+if data.username_ and not data.username_:match("_") then
+user_name = '@'..data.username_
 else
-user_name = check_markdown(data.first_name_)
+user_name = data.first_name_
 end
      if not already_sudo(data.id_) then
    if not lang then
@@ -202,10 +202,10 @@ local function action_by_username(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
     local cmd = arg.cmd
-if data.type_.user_.username_ then
-user_name = '@'..check_markdown(data.type_.user_.username_)
+if data.type_.user_.username_ and not data.type_.user_.username_:match("_") then
+user_name = '@'..data.type_.user_.username_
 else
-user_name = check_markdown(data.title_)
+user_name = data.title_
 end
 if not arg.username then return false end
     if cmd == "adminprom" then
@@ -281,10 +281,10 @@ local function action_by_id(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
     local cmd = arg.cmd
-if data.username_ then
-user_name = '@'..check_markdown(data.username_)
+if data.username_ and not data.username_:match("_") then
+user_name = '@'..data.username_
 else
-user_name = check_markdown(data.first_name_)
+user_name = data.first_name_
 end
 if not tonumber(arg.user_id) then return false end
     if cmd == "adminprom" then
@@ -359,7 +359,7 @@ end
 local function run(msg, matches)
 local hash = "gp_lang:"..msg.chat_id_
 local lang = redis:get(hash)
- if tonumber(msg.sender_user_id_) == 157059515 then --Put Your ID
+ if tonumber(msg.sender_user_id_) == 321681775 then --Put Your ID
 if matches[1] == "visudo" then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
     tdcli_function ({
@@ -461,7 +461,7 @@ if matches[1] == 'createsuper' and is_admin(msg) then
 local text = matches[2]
 tdcli.createNewChannelChat({[0] = msg.sender_user_id_}, text)
    if not lang then 
-return '_SuperGroup Has Been Created!_'
+return '_SuperGroup Has Been_ *Created*'
   else
 return '_تم صنع المجموعة الخارقة_'
    end
@@ -471,7 +471,7 @@ if matches[1] == 'tosuper' and is_admin(msg) then
 local id = msg.chat_id_
 tdcli.migrateGroupChatToChannelChat(id)
   if not lang then
-return '_Group Has Been Changed To SuperGroup!_'
+return '_Group Has Been Changed To_ *SuperGroup*'
   else
 return '_تم تحذيث هذه المجموعه لتصبح مجموعة خارقة_'
    end
@@ -549,17 +549,17 @@ local hash = 'auto_leave_bot'
 --Enable Auto Leave
      if matches[2] == 'enable' then
     redis:del(hash)
-   return 'Auto leave has been enabled'
+   return '*Auto leave has been* _enabled_'
 --Disable Auto Leave
      elseif matches[2] == 'disable' then
     redis:set(hash, true)
-   return 'Auto leave has been disabled'
+   return '*Auto leave has been* _disabled_'
 --Auto Leave Status
       elseif matches[2] == 'status' then
       if not redis:get(hash) then
-   return 'Auto leave is enable'
+   return '*Auto leave is* _enable_'
        else
-   return 'Auto leave is disable'
+   return '*Auto leave is* _disable_'
          end
       end
    end
