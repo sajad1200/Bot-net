@@ -2,7 +2,7 @@
 tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
 feedparser = (loadfile "./libs/feedparser.lua")()
-our_id = 265541133 -- Put Here Your Bot ID
+our_id = 298571173 -- Put Here Your Bot ID
 URL = require "socket.url"
 http = require "socket.http"
 https = require "ssl.https"
@@ -85,7 +85,7 @@ function create_config( )
     "me",
     "tools"
  },
-    sudo_users = {321681775},
+    sudo_users = {157059515},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
@@ -227,20 +227,6 @@ function is_private(msg)
   else
     return true
   end
-end
-
-function check_markdown(text) --markdown escape ( when you need to escape markdown , use it like : check_markdown('your text')
-		str = text
-		if str:match('_') then
-			output = str:gsub('_','\\_')
-		elseif str:match('*') then
-			output = str:gsub('*','\\*')
-		elseif str:match('`') then
-			output = str:gsub('`','\\`')
-		else
-			output = str
-		end
-	return output
 end
 
 function is_sudo(msg)
