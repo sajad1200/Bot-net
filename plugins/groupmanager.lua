@@ -182,7 +182,7 @@ local function owner_cb(arg, data)
 local hash = "gp_lang:"..arg.chat_id
 local lang = redis:get(hash)
     local administration = load_data(_config.moderation.data)
-    data.username_ and not data.username_:match("_") then		
+    if data.username_ and not data.username_:match("_") then		
  user_name = '@'..data.username_
  else		
  user_name = data.first_name_	
