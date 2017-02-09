@@ -25,12 +25,10 @@
 
 ````
 # Let's install the bot.
+```
+sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
 
-# Open new terminal and type :
-
-redis-server
-
-# Open a new teminal agin and type :
+```
 
 sudo apt-get update
 cd $HOME
@@ -48,7 +46,8 @@ Botnet.sh
 ### One command
 To install everything in one command, use:
 ```sh
-sudo apt-get update && cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
+sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
+ && cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
 ```
 
 * * *
