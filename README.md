@@ -8,9 +8,9 @@
 
 ## Commands
 
-| Use (help) to see help list |
+| Use (help me) to see help list |
 |:--------|:------------|
-| [#!/]help |
+| [#!/]help me |
 
 | Use (setlang ar) To use bot in Arabic >Or< To use bot in English send (setlang en) |
 |:--------|:------------|
