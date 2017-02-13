@@ -23,11 +23,7 @@
 
 # Installation
 
-```sh
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
-```
 `````
-sudo apt-get update
 cd $HOME
 git clone https://github.com/sajad1200/Bot-net.git
 cd Bot-net
@@ -42,9 +38,9 @@ Botnet.sh
 ``````
 ### One command
 To install everything in one command, use:
+
 ```sh
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
- && cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
+cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
 ```
 
 * * *
@@ -74,8 +70,6 @@ More information [Bot-net Development](https://t.me/joinchat/AAAAAD6v2N-Xoupx5d
 - [Sajad Aliraqe On github](https://github.com/sajad1200) 
 
 - [Sajad Aliraqe On Telegram](https://telegram.me/Al_Srai)
-
-- [Sahmi](https://telegram.me/safl888)
 
 
 ### Our Telegram channel:
