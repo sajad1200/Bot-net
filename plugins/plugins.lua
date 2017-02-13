@@ -1,5 +1,3 @@
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
-
 do
 
 -- Returns the key (index) in the config.enabled_plugins table
@@ -29,23 +27,23 @@ local function list_all_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ✔ enabled, ❌ disabled
-    local status = '*[Inactive]>>*'
+    local status = '*|✖️|*>*'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '*[active]>>*'
+        status = '*|✔|>*'
       end
       nact = nact+1
     end
-    if not only_enabled or status == '*[active]>>*'then
+    if not only_enabled or status == '*|✔|>*'then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..nsum..'.'..status..' '..v..' \n'
     end
   end
-  local text = text..'\n\n'..nsum..' *plugins installed*\n\n'..nact..' _plugins enabled_\n\n'..nsum-nact..' _plugins disabled_'..tmp
+  local text = text..'\n\n'..nsum..' *📂plugins installed*\n\n'..nact..' _✔️plugins enabled_\n\n'..nsum-nact..' _❌plugins disabled_'..tmp
   return text
 end
 
@@ -54,23 +52,23 @@ local function list_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ✔ enabled, ❌ disabled
-    local status = '*[Inactive]>>*'
+    local status = '*|✖️|>*'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '*[active]>>*'
+        status = '*|✔|>*'
       end
       nact = nact+1
     end
-    if not only_enabled or status == '*[active]>>*'then
+    if not only_enabled or status == '*|✔|>*'then
       -- get the name
       v = string.match (v, "(.*)%.lua")
      -- text = text..v..'  '..status..'\n'
     end
   end
-  local text = text.."\n_All Plugins Reloaded_\n\n"..nact.." *Plugins Enabled*\n"..nsum.." *Plugins Installed*"
+  local text = text.."\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n\n@Al_Srai1"
 return text
 end
 
@@ -152,7 +150,7 @@ local function reenable_plugin_on_chat(receiver, plugin)
   save_config()
   return ' '..plugin..' is enabled again'
 end
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
+
 local function run(msg, matches)
   -- Show the available plugins 
   if is_sudo(msg) then
@@ -170,7 +168,7 @@ end
     return reenable_plugin_on_chat(receiver, plugin)
   end
     end
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
+
   -- Enable a plugin
   if matches[2] == '+' and is_sudo(msg) then --after changed to moderator mode, set only sudo
       if is_mod(msg) then
@@ -232,4 +230,4 @@ return {
 }
 
 end
--- Coded By Sajad Aliraqe - [Channel : @Alsrai1] - [Telegarm : @Al_Srai]
+
