@@ -1329,7 +1329,7 @@ local settings = data[tostring(target)]["settings"]
  text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock arabic :_ *"..settings.lock_arabic.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Group welcome :_ *"..settings.welcome.."*\n_Lock pin message :_ *"..settings.lock_pin.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*Group Language* : `EN`"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "*أعدادت المجموعة:*\n_قفل التعديل :_ *"..settings.lock_edit.."*\n_قفل روابط :_ *"..settings.lock_link.."*\n_قفل تاك :_ *"..settings.lock_tag.."*\n_قفل التكرار :_ *"..settings.flood.."*\n_قفل الكلايش :_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل العربية :_ *"..settings.lock_arabic.."*\n_قفل صفحات ويب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_ترحيب المجموعة :_ *"..settings.welcome.."*\n_قفل تثبيت الرسائل :_ *"..settings.lock_pin.."*\n_الحماية من البوتات :_ *"..settings.lock_bots.."*\n_عدد التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_زبان سوپرگروه_ : `AR`"
+ text = "*أعدادت المجموعة:*\n_قفل التعديل :_ *"..settings.lock_edit.."*\n_قفل روابط :_ *"..settings.lock_link.."*\n_قفل تاك :_ *"..settings.lock_tag.."*\n_قفل التكرار :_ *"..settings.flood.."*\n_قفل الكلايش :_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل العربية :_ *"..settings.lock_arabic.."*\n_قفل صفحات ويب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_ترحيب المجموعة :_ *"..settings.welcome.."*\n_قفل تثبيت الرسائل :_ *"..settings.lock_pin.."*\n_الحماية من البوتات :_ *"..settings.lock_bots.."*\n_عدد التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_*لغة ألمجموعة* : `AR`"
 end
 return text
 end
@@ -3003,8 +3003,7 @@ return "*تم وضع اللغة على : العربية*"
 end
 end
 
-if matches[1] == "help" and is_mod(msg) then
-if not lang then
+if matches[1] == "help me" and is_mod(msg) then
 text = [[
 *Bot-Net Commands:*
 
@@ -3122,128 +3121,6 @@ _set Welcome Message_
 _You Can Use_ *[!/#]* _To Run The Commands_
 _This Help List Only For_ *Moderators/Owners!*
 _Its Means, Only Group_ *Moderators/Owners* _Can Use It!_]]
-
-elseif lang then
-
-text = [[
-*:*
-
-*!setowner* `[username|id|reply]` 
-_رفع أدري على البوت عبر رد او يوزر_
-
-*!remowner* `[username|id|reply]` 
- _حذف أداري على البوت عبر رد او يوزر_
-
-*!promote* `[username|id|reply]` 
-_رفع مشرف عبر رد او يوزر_
-
-*!demote* `[username|id|reply]` 
-_حذف مشرف عبر رد او يوزر_
-
-*!setflood* `[1-50]`
-_اضافه عدد التكرار_
-
-*!silent* `[username|id|reply]` 
-_لكتم العضو عبر رد او يوزر_
-
-*!unsilent* `[username|id|reply]` 
-_لالغاء كتم العضو عبر رد او يوزر_
-
-*!kick* `[username|id|reply]` 
-_طرد عبر رد او يوزر_
-
-*!ban* `[username|id|reply]` 
-_جظر عبر رد او يوزر_
-
-*!unban* `[username|id|reply]` 
-_فك حظر عبر رد او يوزر_
-
-*!res* `[username]`
-_أضهار المعرف عبر الايدي_
-
-*!id* `[reply]`
-_اضهار الايدي عبر رد او يوزر_
-
-*!whois* `[id]`
-_اضهار معلومات الحساب عبر الايدي_
-
-*!lock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
-_لقفل كل مسبقات الحماية_
-
-*!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
-_لالغاء قفل كل مسبقات الحماية_
-
-*!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
-_كتم محتويات المجموعة او كتما جميعأ_
-
-*!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
-_لالغاء كتم محتويات المجموعة أو الغائها جميعأ_
-
-*!set*`[rules | name | photo | link | about | welcome]`
-_لاضافه قوانين او اسم او صورة او رابط او رسالة ترحيب_
-
-*!clean* `[bans | mods | bots | rules | about | silentlist | filterlist | welcome]`   
-_تنضيف مشرفين و محظورين و بوتات و رسالة لترحيب و لكلمات الممنوعة و قائمه المكتومين_
-
-*!filter* `[word]`
-_لمنع كلمه معينه_
-
-*!unfilter* `[word]`
-_لالغاء منع الكلمات_
-
-*!pin* `[reply]`
-_لتثبيت رسالة عبر الرد_
-
-*!unpin* 
-_لالغاء تثبيت الرسالة عبر الرد_
-
-*!welcome enable/disable*
-_لتفعيل او الغاء تفعيل رسالة الترحيب_
-
-*!settings*
-_اعدادات المجموعة_
-
-*!mutelist*
-_قائمه محتويات المجموعة_
-
-*!silentlist*
-_قائمه المكتومين_
-
-*!filterlist*
-_قائمه الكلمات الممنوعة_
-
-*!banlist*
-_قائمه ألمحظوريين_
-
-*!ownerlist*
-_قائمه الاداريين على البوت_ 
-
-*!modlist* 
-_قائمه المشرفيين_
-
-*!rules*
-_لاضهار القوانين_
-
-*!about*
-_لاضهار الوصف_
-
-
-*!gpinfo*
-_لاضهار معلومات المجموعة_
-
-!*newlink*
-_اضافه رابط جديد_
-
-*!link*
-_عرض الرابط_
-
-*!setwelcome [text]*
-_لاضافة رسالة ترحيب_
-
-_يمكنك أستخدام كل [!#/] في استخدام الاوامر
-
-الاداريين على البوت والمشرفين والمطورين فقط من يمكنهم أضهار قائمه المساعدة]]
-end
 return text
 end
 --------------------- Welcome -----------------------
@@ -3398,7 +3275,7 @@ patterns ={
 "^[!/#](setflood) (%d+)$",
 "^[!/#](res) (.*)$",
 "^[!/#](whois) (%d+)$",
-"^[!/#](help)$",
+"^[!/#](help me)$",
 "^[!/#](setlang) (.*)$",
 "^[#!/](filter) (.*)$",
 "^[#!/](unfilter) (.*)$",
@@ -3412,4 +3289,4 @@ patterns ={
 run=run,
 pre_process = pre_process
 }
---end groupmanager.lua #beyond team#
+--end groupmanager.lua 
