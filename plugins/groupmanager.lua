@@ -1329,7 +1329,7 @@ local settings = data[tostring(target)]["settings"]
  text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock arabic :_ *"..settings.lock_arabic.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Group welcome :_ *"..settings.welcome.."*\n_Lock pin message :_ *"..settings.lock_pin.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*Group Language* : `EN`"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "*أعدادت المجموعة:*\n_قفل التعديل :_ *"..settings.lock_edit.."*\n_قفل روابط :_ *"..settings.lock_link.."*\n_قفل تاك :_ *"..settings.lock_tag.."*\n_قفل التكرار :_ *"..settings.flood.."*\n_قفل الكلايش :_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل العربية :_ *"..settings.lock_arabic.."*\n_قفل صفحات ويب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_ترحيب المجموعة :_ *"..settings.welcome.."*\n_قفل تثبيت الرسائل :_ *"..settings.lock_pin.."*\n_الحماية من البوتات :_ *"..settings.lock_bots.."*\n_عدد التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_*لغة ألمجموعة* : `AR`"
+ text = "*أعدادت المجموعة:*\n_قفل التعديل :_ *"..settings.lock_edit.."*\n_قفل روابط :_ *"..settings.lock_link.."*\n_قفل تاك :_ *"..settings.lock_tag.."*\n_قفل التكرار :_ *"..settings.flood.."*\n_قفل الكلايش :_ *"..settings.lock_spam.."*\n_قفل المنشن :_ *"..settings.lock_mention.."*\n_قفل العربية :_ *"..settings.lock_arabic.."*\n_قفل صفحات ويب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_ترحيب المجموعة :_ *"..settings.welcome.."*\n_قفل تثبيت الرسائل :_ *"..settings.lock_pin.."*\n_الحماية من البوتات :_ *"..settings.lock_bots.."*\n_عدد التكرار :_ *"..NUM_MSG_MAX.."*\n*____________________\n*لغة ألمجموعة* : `AR`"
 end
 return text
 end
@@ -2361,7 +2361,7 @@ local mutes = data[tostring(target)]["mutes"]
  text = " *Group Mute List* : \n_Mute all : _ *"..mutes.mute_all.."*\n_Mute gif :_ *"..mutes.mute_gif.."*\n_Mute text :_ *"..mutes.mute_text.."*\n_Mute inline :_ *"..mutes.mute_inline.."*\n_Mute game :_ *"..mutes.mute_game.."*\n_Mute photo :_ *"..mutes.mute_photo.."*\n_Mute video :_ *"..mutes.mute_video.."*\n_Mute audio :_ *"..mutes.mute_audio.."*\n_Mute voice :_ *"..mutes.mute_voice.."*\n_Mute sticker :_ *"..mutes.mute_sticker.."*\n_Mute contact :_ *"..mutes.mute_contact.."*\n_Mute forward :_ *"..mutes.mute_forward.."*\n_Mute location :_ *"..mutes.mute_location.."*\n_Mute document :_ *"..mutes.mute_document.."*\n_Mute TgService :_ *"..mutes.mute_tgservice.."*\n_Mute Keyboard :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Group Language* : `EN`"
 else
 local mutes = data[tostring(target)]["mutes"] 
- text = " *قائمه كتم حماية المجموعة* : \n_كتم جميعها : _ *"..mutes.mute_all.."*\n_كتم صور متحركه :_ *"..mutes.mute_gif.."*\n_كتم المحادثة :_ *"..mutes.mute_text.."*\n_كتم الانلاين :_ *"..mutes.mute_inline.."*\n_كتم الالعاب :_ *"..mutes.mute_game.."*\n_كتم الصور :_ *"..mutes.mute_photo.."*\n_كتم الفيديوات :_ *"..mutes.mute_video.."*\n_كتم الصوتيات :_ *"..mutes.mute_audio.."*\n_كتم البصمات :_ *"..mutes.mute_voice.."*\n_كتم الملصقات :_ *"..mutes.mute_sticker.."*\n_كتم جهات الاتصال :_ *"..mutes.mute_contact.."*\n_كتم اعادة التوجيه :_ *"..mutes.mute_forward.."*\n_كتم الخرائط :_ *"..mutes.mute_location.."*\n_كتم الملفات :_ *"..mutes.mute_document.."*\n_كتم خدمات التليجرام :_ *"..mutes.mute_tgservice.."*\n_كتم الكيبورد :_ *"..mutes.mute_keyboard.."*\n*____________________*\n_لغة المجموعة_ : `FA`"
+ text = " *قائمه كتم حماية المجموعة* : \n_كتم جميعها : _ *"..mutes.mute_all.."*\n_كتم صور متحركه :_ *"..mutes.mute_gif.."*\n_كتم المحادثة :_ *"..mutes.mute_text.."*\n_كتم الانلاين :_ *"..mutes.mute_inline.."*\n_كتم الالعاب :_ *"..mutes.mute_game.."*\n_كتم الصور :_ *"..mutes.mute_photo.."*\n_كتم الفيديوات :_ *"..mutes.mute_video.."*\n_كتم الصوتيات :_ *"..mutes.mute_audio.."*\n_كتم البصمات :_ *"..mutes.mute_voice.."*\n_كتم الملصقات :_ *"..mutes.mute_sticker.."*\n_كتم جهات الاتصال :_ *"..mutes.mute_contact.."*\n_كتم اعادة التوجيه :_ *"..mutes.mute_forward.."*\n_كتم الخرائط :_ *"..mutes.mute_location.."*\n_كتم الملفات :_ *"..mutes.mute_document.."*\n_كتم خدمات التليجرام :_ *"..mutes.mute_tgservice.."*\n_كتم الكيبورد :_ *"..mutes.mute_keyboard.."*\n*____________________*\n_لغة المجموعة_ : `AR`"
 end
 return text
 end
@@ -3003,7 +3003,8 @@ return "*تم وضع اللغة على : العربية*"
 end
 end
 
-if matches[1] == "help me" and is_mod(msg) then
+if matches[1] == "help" and is_mod(msg) then
+if not lang then
 text = [[
 *Bot-Net Commands:*
 
@@ -3121,6 +3122,132 @@ _set Welcome Message_
 _You Can Use_ *[!/#]* _To Run The Commands_
 _This Help List Only For_ *Moderators/Owners!*
 _Its Means, Only Group_ *Moderators/Owners* _Can Use It!_]]
+
+elseif lang then
+
+text = [[
+*أوامر بوت نيت:*
+
+*!setowner* `[username|id|reply]` 
+_رفع اداري عبر رد او يوزر(اداري على البوت)_
+
+*!remowner* `[username|id|reply]` 
+ _حذف اداري عبر رد او يوزر_
+ 
+*!promote* `[username|id|reply]` 
+_رفع مشرف عبر رد او يوزر_
+
+*!demote* `[username|id|reply]` 
+_حذف مشرف عبر رد او يوزر او ايدي_
+
+*!setflood* `[1-50]`
+_اضافة التكرار للرسائل_
+
+*!silent* `[username|id|reply]` 
+_كتم المستخدم عبر رد او يوزر او ايدي_
+
+*!unsilent* `[username|id|reply]` 
+_الغاء كتم المستخدم عبر رد او يوزر او ايدي_
+
+*!kick* `[username|id|reply]` 
+_طرد عبر رد او يوزر او ايدي_
+
+*!ban* `[username|id|reply]` 
+_حظر عبر رد او يوزر او ايديه_
+
+*!unban* `[username|id|reply]` 
+_فك الحظر عبر رد او يوزر او ايدي_
+
+*!res* `[username]`
+_اضهار الاسم عبر المعرف_
+
+*!id* `[reply]`
+_اضهار الايدي عبر الرد_
+
+*!whois* `[id]`
+_اضهار المعرف عبر الايدي_
+
+*!lock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
+_قفل كل ملحقات حماية المجموعة_
+
+*!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
+_الغاء قفل ملحقات حماية المجموعة_
+
+*!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
+_كتم كل ملحقات حماية المجموعة_
+
+*!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
+_الغاء كتم ملحقات حماية المجموعة_
+
+*!set*`[rules | name | photo | link | about | welcome]`
+_اضافة كل معلومات البوت والمجموعة_
+
+*!clean* `[bans | mods | bots | rules | about | silentlist | filterlist | welcome]`   
+_تنضيف كل مسبقات البوت والمجموعة_
+
+*!filter* `[word]`
+_حضر الكلمات_
+
+*!unfilter* `[word]`
+_الغاء حضر الكلمات_
+
+*!pin* `[reply]`
+_تثبيت الرسائل عبر الرد_
+
+*!unpin* 
+_الغاء تثبيت رسائل عبر الرد_
+
+*!welcome enable/disable*
+_تفعيل والغاء تفعيل رسالة الترحيب_
+
+*!settings*
+_اعدادات المجموعة_
+
+*!mutelist*
+_قائمه كتم ملحقات المجموعة_
+
+*!silentlist*
+_قائمه المكتومين_
+
+*!filterlist*
+_قائمه الكلمات الممنوعة_
+
+*!banlist*
+_قائمه المحظوريين_
+
+*!ownerlist*
+_قائمه الاداريين_ 
+
+*!modlist* 
+_قائمه المشرفين_
+
+*!rules*
+_اضهار القوانين_
+
+*!about*
+_اضهار الوصف_
+
+*!id*
+_اضهار الايدي_
+
+*!gpinfo*
+_معلومات المجموعة_
+
+!*newlink*
+_اضافة رابط جديد_
+
+*!link*
+_نمایش لینک گروه_
+
+*!setwelcome [text]*
+_اضافة رسالة ترحيب_
+
+_يمكنك استخدام كل الـ [!/#] في استخدام الاوامر 
+
+و الاداري والمشرف والادمن/فقط المطورين يمكنهم اضهار هذه القائمه!_
+
+*بالتوفيق للجميع ;)*]]
+end
 return text
 end
 --------------------- Welcome -----------------------
@@ -3275,7 +3402,7 @@ patterns ={
 "^[!/#](setflood) (%d+)$",
 "^[!/#](res) (.*)$",
 "^[!/#](whois) (%d+)$",
-"^[!/#](help me)$",
+"^[!/#](help)$",
 "^[!/#](setlang) (.*)$",
 "^[#!/](filter) (.*)$",
 "^[#!/](unfilter) (.*)$",
@@ -3289,4 +3416,4 @@ patterns ={
 run=run,
 pre_process = pre_process
 }
---end groupmanager.lua 
+--end groupmanager.lua
