@@ -305,7 +305,7 @@ if not administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *group owner*", 0, "md")
    else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه نبود*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_المستخدم_ "..user_name.." *"..data.id_.."*انه ليس اداري في الجموعة*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
@@ -313,7 +313,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is no longer a_ *group owner*", 0, "md")
     else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام صاحب گروه برکنار شد*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_المستخدم_ "..user_name.." *"..data.id_.."*لم يعد اداري المجموعة*", 0, "md")
    end
 end
 tdcli_function ({
@@ -3237,7 +3237,7 @@ _معلومات المجموعة_
 _اضافة رابط جديد_
 
 *!link*
-_عرض رابط المجموعة_
+_نمایش لینک گروه_
 
 *!setwelcome [text]*
 _اضافة رسالة ترحيب_
@@ -3416,4 +3416,4 @@ patterns ={
 run=run,
 pre_process = pre_process
 }
---end groupmanager.lua
+--end groupmanager.lua #beyond team#
