@@ -69,16 +69,16 @@ function create_config( )
     "groupmanager",
     "msg-checks",
     "plugins",
-    "me",
+	"me",
     "tools"
  },
     sudo_users = {157059515},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-    info_text = [[>> Bot-Net v2
-• Developer : @Al_Srai  - Sajad Aliraqe
-• Channel : @Al_Sri1
+    info_text = [[- BOT-NET v2.0
+- Developer : Sajad Aliraqe - سجاد العراقي - @Al_Srai
+- Channel : @Al_Srai1
 ]],
   }
   serialize_to_file(config, './data/config.lua')
@@ -393,4 +393,3 @@ cmsg = data
 	end
 
   end
-
