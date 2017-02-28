@@ -1,6 +1,6 @@
 -- Begin myinfo.lua
 local function run(msg, matches)
-	if matches[1]:lower() == 'me' then
+	if matches[1]:lower() == 'أنا' then
 		function get_id(arg, data)
 			local username
 			if data.first_name_ then
@@ -23,15 +23,15 @@ local function run(msg, matches)
 				end
 				local rank
 				if is_sudo(msg) then
-					rank = 'Sudo'
+					rank = 'مطــور'
 				elseif is_owner(msg) then
-					rank = 'Bot Owner'
+					rank = 'أداري على البوت'
 				elseif is_admin(msg) then
-					rank = 'Admin'
+					rank = 'أدمــن'
 				elseif is_mod(msg) then
-					rank = 'Moderator'
+					rank = 'مشــرف'
 				else
-					rank = 'Group Member'
+					rank = 'مجرد عضو'
 				end
 				local text = '<b>Information:</b>\n<b>First Name:</b> <i>'..data.first_name_..'</i>\n<b>Last Name:</b> <i>'..lastName..'</i>\n<b>Username:</b> '..username..'\n<b>ID:</b> [ <code>'..data.id_..'</code> ]\n<b>Group ID:</b> [ <code>'..arg.chat_id..'</code> ]\n<b>Phone Number:</b> [ <code>'..telNum..'</code> ]\n<b>Rank:</b> <i>'..rank..'</i>'
 				tdcli.sendMessage(arg.chat_id, msg.id_, 1, text, 1, 'html')
@@ -42,6 +42,8 @@ local function run(msg, matches)
 end
 
 return { patterns = 
-	{ "^[/!#]([Mm][Ee])$" }, 
+	{ "^[/!#]([Mm][Ee])$"
+      "^(أنا)$",
+	}, 
 	run = run
 	}

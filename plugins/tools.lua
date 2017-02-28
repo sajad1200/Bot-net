@@ -416,7 +416,7 @@ local function run(msg, matches)
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
  if tonumber(msg.from.id) == SUDO then
-if matches[1] == "visudo" then
+if matches[1] == "visudo" or matches[1] == "رفع مطور" then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -437,7 +437,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.to.id,username=matches[2],cmd="visudo"})
       end
    end
-if matches[1] == "desudo" then
+if matches[1] == "desudo" or matches[1] == "حذف مطور" then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -459,7 +459,7 @@ tdcli_function ({
       end
    end
 end
-if matches[1] == "adminprom" and is_sudo(msg) then
+if matches[1] == "adminprom" or matches[1] == "رفع ادمن" and is_sudo(msg) then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -480,7 +480,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.to.id,username=matches[2],cmd="adminprom"})
       end
    end
-if matches[1] == "admindem" and is_sudo(msg) then
+if matches[1] == "admindem" or matches[1] == "حذف ادمن" and is_sudo(msg) then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -598,7 +598,7 @@ tdcli.sendMessage(k, 0, 0, bc, 0)
 end	
 end
 
-if matches[1] == 'sudolist' and is_sudo(msg) then
+if matches[1] == 'sudolist' or matches[1] == 'قائمه المطورين'  and is_sudo(msg) then
 return sudolist(msg)
     end
 if matches[1] == 'chats' and is_admin(msg) then
@@ -624,10 +624,10 @@ return chat_list(msg)
 	   tdcli.sendMessage(matches[2], 0, 1, "Group has been removed by admin command", 1, 'html')
     return '_Group_ *'..matches[2]..'* _removed_'
 		end
-if matches[1] == 'botnet' then
+if matches[1] == 'botnet' or matches[1] == 'بوت نيت'  then
 return tdcli.sendMessage(msg.to.id, msg.id, 1, _config.info_text, 1, 'html')
     end
-if matches[1] == 'adminlist' and is_admin(msg) then
+if matches[1] == 'adminlist' or matches[1] == 'قائمه الادمن'  and is_admin(msg) then
 return adminlist(msg)
     end
      if matches[1] == 'leave' and is_admin(msg) then
@@ -665,9 +665,20 @@ patterns = {
 "^[!/#](adminlist)$",
 "^[!/#](adminprom) (.*)$", 
 "^[!/#](admindem) (.*)$",
+"^(رفع مطور)$", 
+"^(حذف مطور)$",
+"^(قائمه المطورين)$",
+"^(رفع مطور) (.*)$", 
+"^(حذف مطور) (.*)$",
+"^(رفع ادمن)$", 
+"^(حذف ادمن)$",
+"^(قائمه الادمن)$",
+"^(رفع ادمن) (.*)$", 
+"^(حذف ادمن) (.*)$",
 "^[!/#](leave)$",
 "^[!/#](autoleave) (.*)$", 
 "^[!/#](botnet)$",
+"^(بوت نيت)$",
 "^[!/#](creategroup) (.*)$",
 "^[!/#](createsuper) (.*)$",
 "^[!/#](tosuper)$",
@@ -684,4 +695,4 @@ patterns = {
 }, 
 run = run 
 }
--- #End By @BeyondTeam
+
