@@ -2375,11 +2375,27 @@ local user = msg.from.id
 if msg.to.type ~= 'pv' then
 if matches[1] == "id" or matches[1] == "ايدي" then
 if not matches[2] and not msg.reply_id then
-   if not lang then
-return "*Gp* `ID` : `"..chat.."`\n*Member* `ID` : `"..user.."`"
+local function getpro(arg, data)
+   if data.photos_[0] then
+       if not lang then
+            tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'Gp ID : `'..msg.to.id..'\nUser ID : '..msg.from.id,dl_cb,nil)
+       elseif lang then
+            tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'Gp ID : '..msg.to.id..'\nUser ID : '..msg.from.id,dl_cb,nil)
+     end
    else
-return "*Gp* `ID` : `"..chat.."`\n*Member* `ID` : `"..user.."`"
+       if not lang then
+      tdcli.sendMessage(msg.to.id, msg.id_, 1, "`You Have Not Profile Photo...!`\n\n> *Gp ID :* `"..msg.to.id.."`\n*User ID :* `"..msg.from.id.."`", 1, 'md')
+       elseif lang then
+            tdcli.sendMessage(msg.to.id, msg.id_, 1, "`You Have Not Profile Photo...!`\n\n> *Gp ID :* `"..msg.to.id.."`\n*User ID :* `"..msg.from.id.."`", 1, 'md')
+            end
+        end
    end
+   tdcli_function ({
+    ID = "GetUserProfilePhotos",
+    user_id_ = msg.from.id,
+    offset_ = 0,
+    limit_ = 1
+  }, getpro, nil)
 end
 if msg.reply_id and not matches[2] then
     tdcli_function ({
@@ -2443,10 +2459,10 @@ return "*تم الغاء تثبيت الرسالة*"
 end
 end
 end
-if matches[1] == "add" or matches[1] == 'اضافه' then
+if matches[1] == "add" or matches[1] == 'تفعيل' then
 return modadd(msg)
 end
-if matches[1] == "rem" or matches[1] == 'حذف' then
+if matches[1] == "rem" or matches[1] == 'تعطيل' then
 return modrem(msg)
 end
 if matches[1] == "setowner" or matches[1] == 'اضافه اداري' and is_admin(msg) then
@@ -2831,7 +2847,7 @@ tdcli_function ({
     return "_Group_ *flood* _sensitivity has been set to :_ *[ "..matches[2].." ]*"
        end
 		if matches[1]:lower() == 'clean' or matches[1] == 'تنضيف' and is_owner(msg) then
-			if matches[2] == 'mods' or matches[2] == 'مشرفين' then
+			if matches[2] == 'mods' then
 				if next(data[tostring(chat)]['mods']) == nil then
             if not lang then
 					return "_No_ *moderators* _in this group_"
@@ -2921,7 +2937,7 @@ tdcli_function ({
 		   	end
         end
 		if matches[1]:lower() == 'clean' or matches[1] == 'تنضيف' and is_admin(msg) then
-			if matches[2] == 'owners' or matches[2] == 'الادارين' then
+			if matches[2] == 'owners'then
 				if next(data[tostring(chat)]['owners']) == nil then
              if not lang then
 					return "_No_ *owners* _in this group_"
@@ -3112,7 +3128,7 @@ _Its Means, Only Group_ *Moderators/Owners* _Can Use It!_
 elseif lang then
 
 text = [[
- 🌇 -  أوامر بوت نيت بالغه العربية :
+ 🌇 -  أوامر بوت نيت باللغة العربية :
  
  
 ➕
@@ -3191,7 +3207,7 @@ text = [[
 
 
 ملاحضه : يمكن أستخدام الاوامر بدون أي شارحات
-مع تحاتي لكم والتوفيق لكم #ســجاد ألــعراقــي - @Al_Srai - @Al_Srai1
+مع تحياتي سجاد العراقي - @Sajad_Aliraqi - @Al_Srai1
 ]]
 end
 return text
@@ -3324,8 +3340,8 @@ patterns ={
 "^(معلومات المجموعة)$",
 "^[!/#](add)$",
 "^[!/#](rem)$",
-"^(اضافه)$",
-"^(حذف)$",
+"^(تفعيل)$",
+"^(تعطيل)$",
 "^[!/#](setowner)$",
 "^[!/#](setowner) (.*)$",
 "^[!/#](remowner)$",
@@ -3403,4 +3419,4 @@ patterns ={
 run=run,
 pre_process = pre_process
 }
---end groupmanager.lua #beyond team#
+
