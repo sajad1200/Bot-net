@@ -177,7 +177,7 @@ end
    tdcli.unpinChannelMessage(msg.to.id)
           end
     if lang then
-     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>شما اجازه دسترسی به سنجاق پیام را ندارید، به همین دلیل پیام قبلی مجدد سنجاق میگردد</i>', 0, "html")
+     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>ليس لديك الصلاحية الكاملة لتثبيت هذه الرسالة , تم تثبيت الرسالة السابقه</i>', 0, "html")
      elseif not lang then
     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>You Have Not Permission To Pin Message, Last Message Has Been Pinned Again</i>', 0, "html")
           end
@@ -437,7 +437,7 @@ else
    if not lang then
   tdcli.sendMessage(chat, msg.id, 0, "_User_ "..user_name.." `[ "..user.." ]` _has been_ *kicked* _because of_ *flooding*", 0, "md")
    elseif lang then
-  tdcli.sendMessage(chat, msg.id, 0, "_کاربر_ "..user_name.." `[ "..user.." ]` _به دلیل ارسال پیام های مکرر اخراج شد_", 0, "md")
+  tdcli.sendMessage(chat, msg.id, 0, "_المستخدم_ "..user_name.." `[ "..user.." ]` _تم الطرد بسبب التكرار_", 0, "md")
     end
 redis:setex('sender:'..user..':flood', 30, true)
       end
@@ -452,4 +452,4 @@ return {
 	patterns = {},
 	pre_process = pre_process
 }
---End msg_checks.lua--
+--End msg_checks.lua
