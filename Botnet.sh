@@ -1,7 +1,7 @@
 
 #!/usr/bin/env bash
 
-cd $HOME/Bot-net
+cd Bot-net
 
 install() {
 	    cd tg
