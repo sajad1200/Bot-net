@@ -1,57 +1,11 @@
-THIS_DIR=$(cd $(dirname $0); pwd)
-cd $THIS_DIR
 
-# echo the color
-gray() {
-  printf '\e[1;30m%s\n\e[0;39;49m' "$@"
-}
-red() {
-  printf '\e[1;31m%s\n\e[0;39;49m' "$@"
-}
-green() {
-  printf '\e[1;32m%s\n\e[0;39;49m' "$@"
-}
-brown() {
-  printf '\e[1;33m%s\n\e[0;39;49m' "$@"
-}
-blue() {
-  printf '\e[1;34m%s\n\e[0;39;49m' "$@"
-}
-pink() {
-  printf '\e[1;35m%s\n\e[0;39;49m' "$@"
-}
-paleblue() {
-  printf '\e[1;36m%s\n\e[0;39;49m' "$@"
-}
-white() {
-  printf '\e[1;37m%s\n\e[0;39;49m' "$@"
-}
+#!/usr/bin/env bash
 
-function logo() {
-green "          ____  ____     _____"
-green "         |  _ )|  _ \   |_   _|___ ____   __  __"
-white "         |  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
-red   "         |____/|____/     |_|\____/\_____|_/\/\_|"
-}
-function logo1() {
-green "     >>>>                       We Are Not Attacker                             "
-green "     >>>>                       We Are Not Alliance                             "
-white "     >>>>                       We Are Family                                   "
-red   "     >>>>                       We Are The Best :-)                             "
-red   "     >>>>                       @BeyondTeam                                     "
-}
-update() {
-  git pull
-  install 
-}
+cd $HOME/Bot-net
 
 install() {
-green 'Do you want me to install? (Yy/Nn): '
-  read -rp ' ' install
-  case "$install" in
-    Y|y)
-      echo 'Installing update and updating'
-      sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+	    cd tg
+		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 		sudo apt-get install g++-4.7 -y c++-4.7 -y
 		sudo apt-get update
 		sudo apt-get upgrade
@@ -60,70 +14,36 @@ green 'Do you want me to install? (Yy/Nn): '
 		sudo apt-get install tmux -y
 		sudo apt-get install libstdc++6 -y
 		sudo apt-get install lua-lgi -y
-		sudo apt-get install libnotify-dev
-      echo ''
-  esac
-}
-
-telegram-cli() {
-red 'Do you want me to install the telegram-cli? (Yy/Nn): '
-  read -rp ' ' install
-  case "$install" in
-    Y|y)
- echo "telegram-cli-1222 has been downloading..."
- mkdir -p "$THIS_DIR"/tg
-echo "Creat folder tg"
- cd tg
- wget "https://valtman.name/files/telegram-cli-1222"
- mv telegram-cli-1222 tgcli
- echo "Chmoded tgcli"
- sudo chmod +x tgcli
- cd ..
- esac
-}
-
-commands() {
-  cat <<EOF
-  Usage: $0 [options]
-    Options:
-      install           Install ${0##*/}
-      update            Update ${0##*/}
-      start             Start ${0##*/}
-	  on                Dont off your bot
-EOF
+		sudo apt-get install libnotify-dev -y
+		sudo service redis-server restart
+		wget https://valtman.name/files/telegram-cli-1222
+		mv telegram-cli-1222 tgcli
+		chmod +x tgcli
+		cd ..
+		chmod +x bot
+		chmod +x tg
 }
 
 if [ "$1" = "install" ]; then
-logo
-logo1
-install
-telegram-cli
-elif [ "$1" = "update" ]; then
-logo
-logo1
-update
-elif [[ "$1" = "on" ]]; then
+  install
+  else
+
 if [ ! -f ./tg/tgcli ]; then
-echo "tg not found"
-echo "Run $0 install"
-exit 1
+    echo "tg not found"
+    echo "Run $0 install"
+    exit 1
 fi
-logo
-logo1
-while true; do
-screen ./tg/tgcli -s ./bot/bot.lua 
-done
-elif [[ "$1" = "start" ]]; then
-if [ ! -f ./tg/tgcli ]; then
-echo "tg not found"
-echo "Run $0 install"
-exit 1
+
+if [ "$1" = "-p" ]; then
+    echo -e "\033[38;5;208m"
+    echo -e "     >> Bot-net Source By Sajad Aliraqe - @Al_Srai                    "
+    echo -e "                                              \033[0;00m"
+    echo -e "\e[36m"
+    ./tg/tgcli -s ./bot/bot.lua -p $2
 fi
-logo
-logo1
-./tg/tgcli -s ./bot/bot.lua 
-else
-logo
-logo1
-commands
+   echo -e "\033[38;5;208m"
+   echo -e "     >> Bot-net Source By Sajad Aliraqe - @Al_Srai                      "
+   echo -e "                                              \033[0;00m"
+   echo -e "\e[36m"
+   ./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
 fi
