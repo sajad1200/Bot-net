@@ -40,7 +40,7 @@ Botnet.sh
 To install everything in one command, use:
 
 ```sh
-cd $HOME && git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
+git clone https://github.com/sajad1200/Bot-net.git && cd Bot-net && chmod +x Botnet.sh && ./Botnet.sh install && ./Botnet.sh
 ```
 
 * * *
@@ -57,10 +57,6 @@ Open `./Bot-net./data./Config.lua` And add your id in there
     YourID
   }
 ```
-
-# Support and development
-
-More information [Bot-net Development](https://t.me/joinchat/AAAAAD6v2N-Xoupx5d3aOQ)
 
 * * *
 
