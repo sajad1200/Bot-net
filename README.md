@@ -11,10 +11,13 @@
  Use (help) to see help list 
  
  
+ [#!/]help
+ 
+ 
  Use (setlang ar) To use bot in Arabic >Or< To use bot in English send (setlang en) 
  
  
- [#!/]setlang [ar / en] | 
+ [#!/]setlang [ar / en] 
 
 
 * * *
@@ -22,7 +25,6 @@
 # Installation
 
 `````
-cd $HOME
 git clone https://github.com/sajad1200/Bot-net.git
 cd Bot-net
 chmod +x Botnet.sh
