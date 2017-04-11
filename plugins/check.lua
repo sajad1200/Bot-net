@@ -1,5 +1,5 @@
 local datebase = {
-   "Bot Online n\n\ بوت نيت يعمل"
+   "Bot Online\n\nبوت نيت يعمل"
   }
 local function run(msg, matches) 
 return datebase[math.random(#datebase)]
