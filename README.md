@@ -9,7 +9,11 @@
 ## Commands
 
  Use (help) to see help list 
+ 
+ 
  Use (setlang ar) To use bot in Arabic >Or< To use bot in English send (setlang en) 
+ 
+ 
  [#!/]setlang [ar / en] | 
 
 
