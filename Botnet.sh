@@ -1,8 +1,6 @@
 
 #!/usr/bin/env bash
 
-cd Bot-net
-
 install() {
 	    cd tg
 		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
