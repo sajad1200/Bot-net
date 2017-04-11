@@ -1,3 +1,4 @@
+
 function serialize_to_file(data, file, uglify)
   file = io.open(file, 'w+')
   local serialized
@@ -97,7 +98,7 @@ function download_to_file(url, file_name)
 
   file_name = file_name or get_http_file_name(url, headers)
 
-  local file_path = "data/tmp/"..file_name
+  local file_path = "data/"..file_name
   print("Saved to: "..file_path)
 
   file = io.open(file_path, "w+")
@@ -446,6 +447,27 @@ end
   return var
 end
 
+-- Check if user can use the plugin and warns user
+-- Returns true if user was warned and false if not warned (is allowed)
+function warns_user_not_allowed(plugin, msg)
+  if not user_allowed(plugin, msg) then
+    local text = '*This plugin requires privileged user*'
+    local receiver = msg.chat_id_
+             tdcli.sendMessage(msg.chat_id_, "", 0, result, 0, "md")
+    return true
+  else
+    return false
+  end
+end
+
+-- Check if user can use the plugin
+function user_allowed(plugin, msg)
+  if plugin.privileged and not is_sudo(msg) then
+    return false
+  end
+  return true
+end
+
  function is_banned(user_id, chat_id)
   local var = false
   local data = load_data(_config.moderation.data)
@@ -510,16 +532,20 @@ local msgid = {[0] = message_ids}
   tdcli.deleteMessages(chat_id, msgid, dl_cb, nil)
 end
 
+function file_dl(file_id)
+	tdcli.downloadFile(file_id, dl_cb, nil)
+end
+
  function banned_list(chat_id)
 local hash = "gp_lang:"..chat_id
 local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
     local i = 1
-  if not data[tostring(msg.chat_id_)] then
+  if not data[tostring(chat_id)] then
   if not lang then
     return '_Group is not added_'
 else
-    return '*المجموعة ليست مضافة*'
+    return '_Group is not added_'
    end
   end
   -- determine if table is empty
@@ -527,13 +553,13 @@ else
      if not lang then
 					return "_No_ *banned* _users in this group_"
    else
-					return "*لايوجد أعضاء محطورين في هذه المجموعة*"
+					return "_No_ *banned* _users in this group_"
               end
 				end
        if not lang then
    message = '*List of banned users :*\n'
          else
-   message = '_قائمه الاعضاء المحظورين :_\n'
+   message = '*List of banned users :*\n'
      end
   for k,v in pairs(data[tostring(chat_id)]['banned']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -547,11 +573,11 @@ local hash = "gp_lang:"..chat_id
 local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
     local i = 1
-  if not data[tostring(msg.chat_id_)] then
+  if not data[tostring(chat_id)] then
   if not lang then
     return '_Group is not added_'
 else
-    return '*المحموعة ليست مضافة*'
+    return '_Group is not added_'
    end
   end
   -- determine if table is empty
@@ -559,13 +585,13 @@ else
         if not lang then
 					return "_No_ *silent* _users in this group_"
    else
-					return "*لايوجد لأعضاء مكتومين في هذه المجموعة*"
+					return "_No_ *silent* _users in this group_"
              end
 				end
       if not lang then
    message = '*List of silent users :*\n'
        else
-   message = '_قائمه الاعضاء المكتومين :_\n'
+   message = '*List of silent users :*\n'
     end
   for k,v in pairs(data[tostring(chat_id)]['is_silent_users']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -587,13 +613,13 @@ local lang = redis:get(hash)
     if not lang then
 					return "_No_ *globally banned* _users available_"
    else
-					return "*لايوجد اعضاء محظورين عام*"
+					return "_No_ *globally banned* _users available_"
              end
 				end
         if not lang then
    message = '*List of globally banned users :*\n'
    else
-   message = '_قائمه المحظورين عام :_\n'
+   message = '*List of globally banned users :*\n'
    end
   for k,v in pairs(data['gban_users']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -614,7 +640,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return '*المجموعة ليست مضافة*'
+    return '_Group is not added_'
    end
   end
   -- determine if table is empty
@@ -622,7 +648,7 @@ else
       if not lang then
     return "*Filtered words list* _is empty_"
       else
-    return "_قائمه الكلمات الممنوعة فارغة_"
+    return "*Filtered words list* _is empty_"
      end
   end
   if not data[tostring(msg.chat_id_)]['filterlist'] then
@@ -632,11 +658,11 @@ else
       if not lang then
        filterlist = '*List of filtered words :*\n'
          else
-       filterlist = '_قائمه الكلمات الممنوعة :_\n'
+       filterlist = '*List of filtered words :*\n'
     end
  local i = 1
    for k,v in pairs(data[tostring(msg.chat_id_)]['filterlist']) do
-              filterlist = filterlist..'*'..i..'* - _'..k..'_\n'
+              filterlist = filterlist..'*'..i..'* - _'..check_markdown(k)..'_\n'
              i = i + 1
          end
      return filterlist
