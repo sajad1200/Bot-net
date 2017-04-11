@@ -1,3 +1,4 @@
+
 local TIME_CHECK = 2
 local function pre_process(msg)
 local data = load_data(_config.moderation.data)
@@ -177,8 +178,7 @@ end
    tdcli.unpinChannelMessage(msg.to.id)
           end
     if lang then
-     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>ليس لديك الصلاحية الكاملة لتثبيت هذه الرسالة , تم تثبيت الرسالة السابقه</i>', 0, "html")
-     elseif not lang then
+     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>You Have Not Permission To Pin Message, Last Message Has Been Pinned Again</i>', 0, "html")     elseif not lang then
     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>You Have Not Permission To Pin Message, Last Message Has Been Pinned Again</i>', 0, "html")
           end
       end
@@ -437,8 +437,8 @@ else
    if not lang then
   tdcli.sendMessage(chat, msg.id, 0, "_User_ "..user_name.." `[ "..user.." ]` _has been_ *kicked* _because of_ *flooding*", 0, "md")
    elseif lang then
-  tdcli.sendMessage(chat, msg.id, 0, "_المستخدم_ "..user_name.." `[ "..user.." ]` _تم الطرد بسبب التكرار_", 0, "md")
-    end
+tdcli.sendMessage(chat, msg.id, 0, "المستخدم "..user_name.." `[ "..user.."تم الطرد بسبب التكرار", 0, "md") 
+end
 redis:setex('sender:'..user..':flood', 30, true)
       end
     end
@@ -452,4 +452,3 @@ return {
 	patterns = {},
 	pre_process = pre_process
 }
---End msg_checks.lua

@@ -3414,7 +3414,6 @@ patterns ={
 "^(ترحيب) (.*)$",
 "^[!/#](setwelcome) (.*)",
 "^[!/#](welcome) (.*)$",
-
 },
 run=run,
 pre_process = pre_process

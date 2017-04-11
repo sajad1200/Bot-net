@@ -827,7 +827,7 @@ if matches[1] == "banlist" or matches[1] == "قائمه محظورين" and is_m
 end
 return {
 	patterns = {
-		"^[!/#](banall)$",
+        "^[!/#](banall)$",
 		"^[!/#](banall) (.*)$",
 		"^[!/#](unbanall)$",
 		"^[!/#](unbanall) (.*)$",
