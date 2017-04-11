@@ -1,5 +1,5 @@
   - [Bot-net](https://telegram.me/Al_Srai1) Source By Sajad Aliraqe
-============
+
 
   - An advanced and powerful administration bot based on NEW TG-CLI
 
@@ -8,15 +8,9 @@
 
 ## Commands
 
-| Use (help) to see help list |
-|:--------|:------------|
-| [#!/]help |
-
-| Use (setlang ar) To use bot in Arabic >Or< To use bot in English send (setlang en) |
-|:--------|:------------|
-| [#!/]setlang [ar / en] | 
-
--You can use "#", "!", or "/" to begin all commands
+ Use (help) to see help list 
+ Use (setlang ar) To use bot in Arabic >Or< To use bot in English send (setlang en) 
+ [#!/]setlang [ar / en] | 
 
 
 * * *
