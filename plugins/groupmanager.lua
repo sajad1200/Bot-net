@@ -2378,15 +2378,15 @@ if not matches[2] and not msg.reply_id then
 local function getpro(arg, data)
    if data.photos_[0] then
        if not lang then
-            tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'Gp ID : `'..msg.to.id..'\nUser ID : '..msg.from.id,dl_cb,nil)
+            tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'> Gp ID : '..msg.to.id..'\n> Your ID : '..msg.from.id,dl_cb,nil)
        elseif lang then
-            tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'Gp ID : '..msg.to.id..'\nUser ID : '..msg.from.id,dl_cb,nil)
+            tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'> Gp ID : '..msg.to.id..'\n> Your ID : '..msg.from.id,dl_cb,nil)
      end
    else
        if not lang then
-      tdcli.sendMessage(msg.to.id, msg.id_, 1, "`You Have Not Profile Photo...!`\n\n> *Gp ID :* `"..msg.to.id.."`\n*User ID :* `"..msg.from.id.."`", 1, 'md')
+      tdcli.sendMessage(msg.to.id, msg.id_, 1, "`You Have Not Profile Photo...!`\n\n> *> Gp ID :* `"..msg.to.id.."`\n*> Your ID :* `"..msg.from.id.."`", 1, 'md')
        elseif lang then
-            tdcli.sendMessage(msg.to.id, msg.id_, 1, "`You Have Not Profile Photo...!`\n\n> *Gp ID :* `"..msg.to.id.."`\n*User ID :* `"..msg.from.id.."`", 1, 'md')
+            tdcli.sendMessage(msg.to.id, msg.id_, 1, "`You Have Not Profile Photo...!`\n\n> *> Gp ID :* `"..msg.to.id.."`\n*> Your ID :* `"..msg.from.id.."`", 1, 'md')
             end
         end
    end
@@ -3342,14 +3342,14 @@ patterns ={
 "^[!/#](rem)$",
 "^(تفعيل)$",
 "^(تعطيل)$",
-"^[!/#](setowner)$",
-"^[!/#](setowner) (.*)$",
-"^[!/#](remowner)$",
-"^[!/#](remowner) (.*)$",
-"^(اضافه اداري)$",
-"^(اضافه اداري) (.*)$",
-"^(حذف اداري)$",
-"^(حذف اداري) (.*)$",
+--"^[!/#](setowner)$",
+--"^[!/#](setowner) (.*)$",
+--"^[!/#](remowner)$",
+--"^[!/#](remowner) (.*)$",
+--"^(اضافه اداري)$",
+--"^(اضافه اداري) (.*)$",
+--"^(حذف اداري)$",
+--"^(حذف اداري) (.*)$",
 "^[!/#](promote)$",
 "^[!/#](promote) (.*)$",
 "^[!/#](demote)$",
