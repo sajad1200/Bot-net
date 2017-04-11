@@ -27,9 +27,9 @@ end
 
 return {  
 patterns ={  
-'^[!/#](cm)$' 
-'^[!/#](اطرد كل الاعضاء)$' 
- }, 
+'^[!/#](cm)$',
+'^[!/#](اطرد كل الاعضاء)$', 
+    }
   run = run 
 }
 --@Tele_Sudo @Sajad_Alirqi
