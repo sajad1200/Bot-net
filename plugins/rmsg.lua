@@ -14,7 +14,7 @@ local function run(msg, matches)
     if matches[1] == 'del' or matches[1] == 'مسح' and is_owner(msg) then
         if tostring(msg.to.id):match("^-100") then 
             if tonumber(matches[2]) > 1000 or tonumber(matches[2]) < 1 then
-                return  ' *1000*> _1 يمكنك حذف الرسائل مابين فقط* '
+                return  ' *1000* > _1_ *يمكنك حذف الرسائل مابين فقط* '
             else
 				tdcli.getChatHistory(msg.to.id, msg.id,0 , 100, delmsg, {msgs=matches[2]})
 				return "`"..matches[2].." `_العدد من الرسائل تم حذفه_ "
